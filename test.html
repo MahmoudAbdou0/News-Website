@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الموقع الإخباري الرياضي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap");
+
+      * {
+        font-family: "Cairo", sans-serif;
+      }
+
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .news-card {
+        transition: all 0.3s ease;
+      }
+
+      .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .live-indicator {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      .weather-icon {
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white shadow-lg">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <div class="text-2xl font-bold">⚽ الموقع الإخباري الرياضي</div>
+          <div class="flex space-x-6 space-x-reverse">
+            <button
+              onclick="showPage('home')"
+              class="nav-btn px-4 py-2 rounded hover:bg-white hover:bg-opacity-20 transition-all"
+            >
+              الرئيسية
+            </button>
+            <button
+              onclick="showPage('matches')"
+              class="nav-btn px-4 py-2 rounded hover:bg-white hover:bg-opacity-20 transition-all"
+            >
+              المباريات
+            </button>
+            <button
+              onclick="showPage('table')"
+              class="nav-btn px-4 py-2 rounded hover:bg-white hover:bg-opacity-20 transition-all"
+            >
+              جدول الدوري
+            </button>
+            <button
+              onclick="showPage('stats')"
+              class="nav-btn px-4 py-2 rounded hover:bg-white hover:bg-opacity-20 transition-all"
+            >
+              الإحصائيات
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home-page" class="page">
+      <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <!-- Main Content -->
+          <main class="lg:col-span-3">
+            <!-- Politics News -->
+            <section class="mb-12">
+              <h2
+                class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-500 pb-2"
+              >
+                🏛️ أخبار السياسة
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <article
+                  class="news-card bg-white rounded-lg shadow-md overflow-hidden"
+                >
+                  <div
+                    class="h-48 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center"
+                  >
+                    <span class="text-6xl">🏛️</span>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2">اجتماع مجلس الوزراء</h3>
+                    <p class="text-gray-600 text-sm">
+                      مناقشة أهم القضايا الاقتصادية والاجتماعية في الجلسة
+                      الأسبوعية
+                    </p>
+                    <span class="text-xs text-blue-500 mt-2 block"
+                      >منذ ساعتين</span
+                    >
+                  </div>
+                </article>
+                <article
+                  class="news-card bg-white rounded-lg shadow-md overflow-hidden"
+                >
+                  <div
+                    class="h-48 bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center"
+                  >
+                    <span class="text-6xl">🤝</span>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2">اتفاقية تعاون جديدة</h3>
+                    <p class="text-gray-600 text-sm">
+                      توقيع اتفاقية تعاون استراتيجي في مجال التكنولوجيا
+                      والابتكار
+                    </p>
+                    <span class="text-xs text-blue-500 mt-2 block"
+                      >منذ 4 ساعات</span
+                    >
+                  </div>
+                </article>
+                <article
+                  class="news-card bg-white rounded-lg shadow-md overflow-hidden"
+                >
+                  <div
+                    class="h-48 bg-gradient-to-r from-purple-400 to-purple-600 flex items-center justify-center"
+                  >
+                    <span class="text-6xl">📊</span>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2">نتائج الاستطلاع</h3>
+                    <p class="text-gray-600 text-sm">
+                      نشر نتائج استطلاع الرأي حول السياسات الحكومية الجديدة
+                    </p>
+                    <span class="text-xs text-blue-500 mt-2 block"
+                      >منذ 6 ساعات</span
+                    >
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <!-- Economy News -->
+            <section class="mb-12">
+              <h2
+                class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-green-500 pb-2"
+              >
+                💰 أخبار الاقتصاد
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <article
+                  class="news-card bg-white rounded-lg shadow-md overflow-hidden"
+                >
+                  <div
+                    class="h-48 bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center"
+                  >
+                    <span class="text-6xl">📈</span>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2">ارتفاع البورصة</h3>
+                    <p class="text-gray-600 text-sm">
+                      البورصة المصرية تسجل مكاسب قوية بنسبة 3.2% في جلسة اليوم
+                    </p>
+                    <span class="text-xs text-blue-500 mt-2 block"
+                      >منذ ساعة</span
+                    >
+                  </div>
+                </article>
+                <article
+                  class="news-card bg-white rounded-lg shadow-md overflow-hidden"
+                >
+                  <div
+                    class="h-48 bg-gradient-to-r from-red-400 to-red-600 flex items-center justify-center"
+                  >
+                    <span class="text-6xl">🏭</span>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2">مشروع صناعي جديد</h3>
+                    <p class="text-gray-600 text-sm">
+                      إطلاق مشروع صناعي ضخم باستثمارات تقدر بـ 5 مليارات جنيه
+                    </p>
+                    <span class="text-xs text-blue-500 mt-2 block"
+                      >منذ 3 ساعات</span
+                    >
+                  </div>
+                </article>
+                <article
+                  class="news-card bg-white rounded-lg shadow-md overflow-hidden"
+                >
+                  <div
+                    class="h-48 bg-gradient-to-r from-indigo-400 to-indigo-600 flex items-center justify-center"
+                  >
+                    <span class="text-6xl">💳</span>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2">خدمات مصرفية جديدة</h3>
+                    <p class="text-gray-600 text-sm">
+                      البنوك تطلق خدمات رقمية متطورة لتسهيل المعاملات المالية
+                    </p>
+                    <span class="text-xs text-blue-500 mt-2 block"
+                      >منذ 5 ساعات</span
+                    >
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <!-- Entertainment News -->
+            <section class="mb-12">
+              <h2
+                class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-pink-500 pb-2"
+              >
+                🎭 أخبار الترفيه
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <article
+                  class="news-card bg-white rounded-lg shadow-md overflow-hidden"
+                >
+                  <div
+                    class="h-48 bg-gradient-to-r from-pink-400 to-pink-600 flex items-center justify-center"
+                  >
+                    <span class="text-6xl">🎬</span>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2">فيلم جديد</h3>
+                    <p class="text-gray-600 text-sm">
+                      عرض أول فيلم سينمائي مصري بتقنية الواقع الافتراضي
+                    </p>
+                    <span class="text-xs text-blue-500 mt-2 block"
+                      >منذ ساعتين</span
+                    >
+                  </div>
+                </article>
+                <article
+                  class="news-card bg-white rounded-lg shadow-md overflow-hidden"
+                >
+                  <div
+                    class="h-48 bg-gradient-to-r from-orange-400 to-orange-600 flex items-center justify-center"
+                  >
+                    <span class="text-6xl">🎵</span>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2">حفل موسيقي</h3>
+                    <p class="text-gray-600 text-sm">
+                      حفل موسيقي كبير بمشاركة نجوم الغناء العربي في دار الأوبرا
+                    </p>
+                    <span class="text-xs text-blue-500 mt-2 block"
+                      >منذ 4 ساعات</span
+                    >
+                  </div>
+                </article>
+                <article
+                  class="news-card bg-white rounded-lg shadow-md overflow-hidden"
+                >
+                  <div
+                    class="h-48 bg-gradient-to-r from-teal-400 to-teal-600 flex items-center justify-center"
+                  >
+                    <span class="text-6xl">📺</span>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2">مسلسل رمضاني</h3>
+                    <p class="text-gray-600 text-sm">
+                      الإعلان عن قائمة المسلسلات الرمضانية للعام القادم
+                    </p>
+                    <span class="text-xs text-blue-500 mt-2 block"
+                      >منذ 6 ساعات</span
+                    >
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <!-- Sports News -->
+            <section class="mb-12">
+              <h2
+                class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-red-500 pb-2"
+              >
+                ⚽ أخبار الرياضة
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <article
+                  class="news-card bg-white rounded-lg shadow-md overflow-hidden"
+                >
+                  <div
+                    class="h-48 bg-gradient-to-r from-red-400 to-red-600 flex items-center justify-center"
+                  >
+                    <span class="text-6xl">⚽</span>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2">الأهلي يفوز</h3>
+                    <p class="text-gray-600 text-sm">
+                      الأهلي يحقق فوزاً مهماً على الزمالك في قمة الدوري المصري
+                    </p>
+                    <span class="text-xs text-blue-500 mt-2 block"
+                      >منذ ساعة</span
+                    >
+                  </div>
+                </article>
+                <article
+                  class="news-card bg-white rounded-lg shadow-md overflow-hidden"
+                >
+                  <div
+                    class="h-48 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center"
+                  >
+                    <span class="text-6xl">🏆</span>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2">بطولة أفريقيا</h3>
+                    <p class="text-gray-600 text-sm">
+                      منتخب مصر يتأهل لنهائي كأس الأمم الأفريقية
+                    </p>
+                    <span class="text-xs text-blue-500 mt-2 block"
+                      >منذ 3 ساعات</span
+                    >
+                  </div>
+                </article>
+                <article
+                  class="news-card bg-white rounded-lg shadow-md overflow-hidden"
+                >
+                  <div
+                    class="h-48 bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center"
+                  >
+                    <span class="text-6xl">🥇</span>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2">إنجاز أولمبي</h3>
+                    <p class="text-gray-600 text-sm">
+                      لاعب مصري يحطم الرقم القياسي في بطولة العالم للسباحة
+                    </p>
+                    <span class="text-xs text-blue-500 mt-2 block"
+                      >منذ 5 ساعات</span
+                    >
+                  </div>
+                </article>
+              </div>
+            </section>
+          </main>
+
+          <!-- Sidebar -->
+          <aside class="lg:col-span-1">
+            <!-- Weather Widget -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+              <h3 class="text-xl font-bold mb-4 text-center">🌤️ حالة الطقس</h3>
+              <div class="text-center">
+                <div class="weather-icon text-6xl mb-2">☀️</div>
+                <div
+                  class="text-3xl font-bold text-orange-500"
+                  id="temperature"
+                >
+                  28°
+                </div>
+                <div class="text-gray-600" id="city">القاهرة</div>
+                <button
+                  onclick="getLocation()"
+                  class="mt-2 text-sm text-blue-500 hover:underline"
+                >
+                  📍 موقعي الحالي
+                </button>
+              </div>
+            </div>
+
+            <!-- Currency Exchange -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+              <h3 class="text-xl font-bold mb-4">💱 أسعار الصرف</h3>
+              <div class="space-y-3">
+                <div class="flex justify-between items-center">
+                  <span>💵 الدولار الأمريكي</span>
+                  <span class="font-bold text-green-600">30.85 ج.م</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span>🇸🇦 الريال السعودي</span>
+                  <span class="font-bold text-green-600">8.23 ج.م</span>
+                </div>
+              </div>
+
+              <!-- Currency Calculator -->
+              <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                <h4 class="font-semibold mb-2">حاسبة العملات</h4>
+                <div class="space-y-2">
+                  <input
+                    type="number"
+                    id="amount"
+                    placeholder="المبلغ"
+                    class="w-full p-2 border rounded text-sm"
+                  />
+                  <select
+                    id="fromCurrency"
+                    class="w-full p-2 border rounded text-sm"
+                  >
+                    <option value="EGP">جنيه مصري</option>
+                    <option value="USD">دولار أمريكي</option>
+                    <option value="SAR">ريال سعودي</option>
+                  </select>
+                  <select
+                    id="toCurrency"
+                    class="w-full p-2 border rounded text-sm"
+                  >
+                    <option value="USD">دولار أمريكي</option>
+                    <option value="EGP">جنيه مصري</option>
+                    <option value="SAR">ريال سعودي</option>
+                  </select>
+                  <button
+                    onclick="convertCurrency()"
+                    class="w-full bg-blue-500 text-white p-2 rounded text-sm hover:bg-blue-600"
+                  >
+                    تحويل
+                  </button>
+                  <div
+                    id="conversionResult"
+                    class="text-center font-bold text-green-600"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live Matches -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="text-xl font-bold mb-4">⚽ المباريات المباشرة</h3>
+              <div class="space-y-4">
+                <div class="border-l-4 border-red-500 pl-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="live-indicator text-red-500 text-xs font-bold"
+                      >🔴 مباشر</span
+                    >
+                    <span class="text-xs text-gray-500">الدقيقة 67</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-2">🔴</span>
+                      <span class="text-sm">الأهلي</span>
+                    </div>
+                    <div class="text-lg font-bold">2 - 1</div>
+                    <div class="flex items-center">
+                      <span class="text-sm">الزمالك</span>
+                      <span class="text-2xl ml-2">⚪</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="border-l-4 border-green-500 pl-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-green-500 text-xs font-bold"
+                      >✅ انتهت</span
+                    >
+                    <span class="text-xs text-gray-500">90 دقيقة</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-2">🟡</span>
+                      <span class="text-sm">الإسماعيلي</span>
+                    </div>
+                    <div class="text-lg font-bold">1 - 3</div>
+                    <div class="flex items-center">
+                      <span class="text-sm">بيراميدز</span>
+                      <span class="text-2xl ml-2">🔵</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="border-l-4 border-blue-500 pl-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-blue-500 text-xs font-bold"
+                      >⏰ قادمة</span
+                    >
+                    <span class="text-xs text-gray-500">غداً 20:00</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-2">🟢</span>
+                      <span class="text-sm">المصري</span>
+                    </div>
+                    <div class="text-lg font-bold">vs</div>
+                    <div class="flex items-center">
+                      <span class="text-sm">الجونة</span>
+                      <span class="text-2xl ml-2">🟠</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <!-- Matches Page -->
+    <div id="matches-page" class="page hidden">
+      <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-8">
+          ⚽ مباريات الدوري الإنجليزي الممتاز
+        </h1>
+
+        <!-- Filters -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+          <h3 class="text-xl font-bold mb-4">🔍 فلاتر البحث</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <select id="teamFilter" class="p-3 border rounded-lg">
+              <option value="">جميع الفرق</option>
+              <option value="مانشستر سيتي">مانشستر سيتي</option>
+              <option value="ليفربول">ليفربول</option>
+              <option value="تشيلسي">تشيلسي</option>
+              <option value="أرسنال">أرسنال</option>
+            </select>
+            <input type="date" id="dateFilter" class="p-3 border rounded-lg" />
+            <button
+              onclick="applyFilters()"
+              class="bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600"
+            >
+              تطبيق الفلاتر
+            </button>
+          </div>
+        </div>
+
+        <!-- Matches List -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          id="matchesList"
+        >
+          <!-- Completed Match -->
+          <div
+            class="bg-white rounded-lg shadow-md p-6 match-card"
+            data-team="مانشستر سيتي"
+            data-date="2024-01-15"
+          >
+            <div class="text-center mb-4">
+              <span
+                class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold"
+                >انتهت</span
+              >
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-center">
+                <div class="text-3xl mb-2">🔵</div>
+                <div class="font-semibold">مانشستر سيتي</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-blue-600">3 - 1</div>
+                <div class="text-sm text-gray-500">النتيجة النهائية</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl mb-2">🔴</div>
+                <div class="font-semibold">مانشستر يونايتد</div>
+              </div>
+            </div>
+            <div class="text-center text-sm text-gray-500">
+              15 يناير 2024 - 17:30
+            </div>
+          </div>
+
+          <!-- Live Match -->
+          <div
+            class="bg-white rounded-lg shadow-md p-6 match-card"
+            data-team="ليفربول"
+            data-date="2024-01-20"
+          >
+            <div class="text-center mb-4">
+              <span
+                class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold live-indicator"
+                >🔴 مباشر</span
+              >
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-center">
+                <div class="text-3xl mb-2">🔴</div>
+                <div class="font-semibold">ليفربول</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-red-600">2 - 0</div>
+                <div class="text-sm text-gray-500">الدقيقة 78</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl mb-2">🔵</div>
+                <div class="font-semibold">تشيلسي</div>
+              </div>
+            </div>
+            <div class="text-center text-sm text-gray-500">
+              20 يناير 2024 - جاري الآن
+            </div>
+          </div>
+
+          <!-- Upcoming Match -->
+          <div
+            class="bg-white rounded-lg shadow-md p-6 match-card"
+            data-team="أرسنال"
+            data-date="2024-01-25"
+          >
+            <div class="text-center mb-4">
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold"
+                >قادمة</span
+              >
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-center">
+                <div class="text-3xl mb-2">🔴</div>
+                <div class="font-semibold">أرسنال</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-gray-600">VS</div>
+                <div class="text-sm text-gray-500">لم تبدأ</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl mb-2">⚪</div>
+                <div class="font-semibold">توتنهام</div>
+              </div>
+            </div>
+            <div class="text-center text-sm text-gray-500">
+              25 يناير 2024 - 20:00
+            </div>
+          </div>
+
+          <!-- More matches... -->
+          <div
+            class="bg-white rounded-lg shadow-md p-6 match-card"
+            data-team="تشيلسي"
+            data-date="2024-01-22"
+          >
+            <div class="text-center mb-4">
+              <span
+                class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold"
+                >انتهت</span
+              >
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-center">
+                <div class="text-3xl mb-2">🔵</div>
+                <div class="font-semibold">تشيلسي</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-blue-600">1 - 2</div>
+                <div class="text-sm text-gray-500">النتيجة النهائية</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl mb-2">🟡</div>
+                <div class="font-semibold">نيوكاسل</div>
+              </div>
+            </div>
+            <div class="text-center text-sm text-gray-500">
+              22 يناير 2024 - 15:00
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg shadow-md p-6 match-card"
+            data-team="أرسنال"
+            data-date="2024-01-28"
+          >
+            <div class="text-center mb-4">
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold"
+                >قادمة</span
+              >
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-center">
+                <div class="text-3xl mb-2">🟣</div>
+                <div class="font-semibold">أستون فيلا</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-gray-600">VS</div>
+                <div class="text-sm text-gray-500">لم تبدأ</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl mb-2">🔴</div>
+                <div class="font-semibold">أرسنال</div>
+              </div>
+            </div>
+            <div class="text-center text-sm text-gray-500">
+              28 يناير 2024 - 18:30
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg shadow-md p-6 match-card"
+            data-team="مانشستر سيتي"
+            data-date="2024-01-30"
+          >
+            <div class="text-center mb-4">
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold"
+                >قادمة</span
+              >
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-center">
+                <div class="text-3xl mb-2">🔵</div>
+                <div class="font-semibold">مانشستر سيتي</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-gray-600">VS</div>
+                <div class="text-sm text-gray-500">لم تبدأ</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl mb-2">🔴</div>
+                <div class="font-semibold">ليفربول</div>
+              </div>
+            </div>
+            <div class="text-center text-sm text-gray-500">
+              30 يناير 2024 - 21:00
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- League Table Page -->
+    <div id="table-page" class="page hidden">
+      <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-8">
+          🏆 جدول الدوري الإنجليزي الممتاز
+        </h1>
+
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead class="gradient-bg text-white">
+                <tr>
+                  <th class="p-4 text-right">الترتيب</th>
+                  <th class="p-4 text-right">الفريق</th>
+                  <th class="p-4 text-center">لعب</th>
+                  <th class="p-4 text-center">فوز</th>
+                  <th class="p-4 text-center">تعادل</th>
+                  <th class="p-4 text-center">هزيمة</th>
+                  <th class="p-4 text-center">له</th>
+                  <th class="p-4 text-center">عليه</th>
+                  <th class="p-4 text-center">الفرق</th>
+                  <th class="p-4 text-center">النقاط</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="p-4 font-bold text-yellow-600">1</td>
+                  <td class="p-4">
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-3">🔵</span>
+                      <span class="font-semibold">مانشستر سيتي</span>
+                    </div>
+                  </td>
+                  <td class="p-4 text-center">20</td>
+                  <td class="p-4 text-center text-green-600">16</td>
+                  <td class="p-4 text-center text-yellow-600">3</td>
+                  <td class="p-4 text-center text-red-600">1</td>
+                  <td class="p-4 text-center">52</td>
+                  <td class="p-4 text-center">18</td>
+                  <td class="p-4 text-center text-green-600">+34</td>
+                  <td class="p-4 text-center font-bold text-blue-600">51</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="p-4 font-bold text-yellow-600">2</td>
+                  <td class="p-4">
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-3">🔴</span>
+                      <span class="font-semibold">ليفربول</span>
+                    </div>
+                  </td>
+                  <td class="p-4 text-center">20</td>
+                  <td class="p-4 text-center text-green-600">14</td>
+                  <td class="p-4 text-center text-yellow-600">4</td>
+                  <td class="p-4 text-center text-red-600">2</td>
+                  <td class="p-4 text-center">48</td>
+                  <td class="p-4 text-center">22</td>
+                  <td class="p-4 text-center text-green-600">+26</td>
+                  <td class="p-4 text-center font-bold text-blue-600">46</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="p-4 font-bold text-yellow-600">3</td>
+                  <td class="p-4">
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-3">🔴</span>
+                      <span class="font-semibold">أرسنال</span>
+                    </div>
+                  </td>
+                  <td class="p-4 text-center">20</td>
+                  <td class="p-4 text-center text-green-600">13</td>
+                  <td class="p-4 text-center text-yellow-600">3</td>
+                  <td class="p-4 text-center text-red-600">4</td>
+                  <td class="p-4 text-center">42</td>
+                  <td class="p-4 text-center">25</td>
+                  <td class="p-4 text-center text-green-600">+17</td>
+                  <td class="p-4 text-center font-bold text-blue-600">42</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="p-4 font-bold">4</td>
+                  <td class="p-4">
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-3">🔵</span>
+                      <span class="font-semibold">تشيلسي</span>
+                    </div>
+                  </td>
+                  <td class="p-4 text-center">20</td>
+                  <td class="p-4 text-center text-green-600">11</td>
+                  <td class="p-4 text-center text-yellow-600">6</td>
+                  <td class="p-4 text-center text-red-600">3</td>
+                  <td class="p-4 text-center">38</td>
+                  <td class="p-4 text-center">28</td>
+                  <td class="p-4 text-center text-green-600">+10</td>
+                  <td class="p-4 text-center font-bold">39</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="p-4 font-bold">5</td>
+                  <td class="p-4">
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-3">⚪</span>
+                      <span class="font-semibold">توتنهام</span>
+                    </div>
+                  </td>
+                  <td class="p-4 text-center">20</td>
+                  <td class="p-4 text-center text-green-600">10</td>
+                  <td class="p-4 text-center text-yellow-600">5</td>
+                  <td class="p-4 text-center text-red-600">5</td>
+                  <td class="p-4 text-center">35</td>
+                  <td class="p-4 text-center">30</td>
+                  <td class="p-4 text-center text-green-600">+5</td>
+                  <td class="p-4 text-center font-bold">35</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="p-4 font-bold">6</td>
+                  <td class="p-4">
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-3">🔴</span>
+                      <span class="font-semibold">مانشستر يونايتد</span>
+                    </div>
+                  </td>
+                  <td class="p-4 text-center">20</td>
+                  <td class="p-4 text-center text-green-600">9</td>
+                  <td class="p-4 text-center text-yellow-600">6</td>
+                  <td class="p-4 text-center text-red-600">5</td>
+                  <td class="p-4 text-center">32</td>
+                  <td class="p-4 text-center">28</td>
+                  <td class="p-4 text-center text-green-600">+4</td>
+                  <td class="p-4 text-center font-bold">33</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="p-4 font-bold">7</td>
+                  <td class="p-4">
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-3">🟡</span>
+                      <span class="font-semibold">نيوكاسل</span>
+                    </div>
+                  </td>
+                  <td class="p-4 text-center">20</td>
+                  <td class="p-4 text-center text-green-600">8</td>
+                  <td class="p-4 text-center text-yellow-600">7</td>
+                  <td class="p-4 text-center text-red-600">5</td>
+                  <td class="p-4 text-center">30</td>
+                  <td class="p-4 text-center">26</td>
+                  <td class="p-4 text-center text-green-600">+4</td>
+                  <td class="p-4 text-center font-bold">31</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="p-4 font-bold">8</td>
+                  <td class="p-4">
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-3">🟣</span>
+                      <span class="font-semibold">أستون فيلا</span>
+                    </div>
+                  </td>
+                  <td class="p-4 text-center">20</td>
+                  <td class="p-4 text-center text-green-600">8</td>
+                  <td class="p-4 text-center text-yellow-600">6</td>
+                  <td class="p-4 text-center text-red-600">6</td>
+                  <td class="p-4 text-center">28</td>
+                  <td class="p-4 text-center">28</td>
+                  <td class="p-4 text-center">0</td>
+                  <td class="p-4 text-center font-bold">30</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Statistics Page -->
+    <div id="stats-page" class="page hidden">
+      <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-8">📊 إحصائيات الدوري</h1>
+
+        <!-- Sort Controls -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+          <h3 class="text-xl font-bold mb-4">🔄 ترتيب حسب</h3>
+          <div class="flex flex-wrap gap-4">
+            <button
+              onclick="sortStats('goals')"
+              class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            >
+              الأهداف
+            </button>
+            <button
+              onclick="sortStats('yellow')"
+              class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600"
+            >
+              الكروت الصفراء
+            </button>
+            <button
+              onclick="sortStats('red')"
+              class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+            >
+              الكروت الحمراء
+            </button>
+          </div>
+        </div>
+
+        <!-- Top Scorers -->
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold mb-6 border-b-4 border-green-500 pb-2">
+            ⚽ الهدافون
+          </h2>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            id="scorersGrid"
+          >
+            <div
+              class="bg-white rounded-lg shadow-md p-6 player-card"
+              data-goals="23"
+              data-yellow="2"
+              data-red="0"
+            >
+              <div class="text-center mb-4">
+                <div
+                  class="w-20 h-20 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <span class="text-3xl">👨‍🦱</span>
+                </div>
+                <h3 class="font-bold text-lg">محمد صلاح</h3>
+              </div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center">
+                  <span class="text-2xl mr-2">🔴</span>
+                  <span>ليفربول</span>
+                </span>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between">
+                  <span>⚽ الأهداف:</span>
+                  <span class="font-bold text-green-600">23</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>🟨 كروت صفراء:</span>
+                  <span class="font-bold text-yellow-600">2</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>🟥 كروت حمراء:</span>
+                  <span class="font-bold text-red-600">0</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-lg shadow-md p-6 player-card"
+              data-goals="21"
+              data-yellow="3"
+              data-red="0"
+            >
+              <div class="text-center mb-4">
+                <div
+                  class="w-20 h-20 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <span class="text-3xl">👨‍🦲</span>
+                </div>
+                <h3 class="font-bold text-lg">إيرلينغ هالاند</h3>
+              </div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center">
+                  <span class="text-2xl mr-2">🔵</span>
+                  <span>مانشستر سيتي</span>
+                </span>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between">
+                  <span>⚽ الأهداف:</span>
+                  <span class="font-bold text-green-600">21</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>🟨 كروت صفراء:</span>
+                  <span class="font-bold text-yellow-600">3</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>🟥 كروت حمراء:</span>
+                  <span class="font-bold text-red-600">0</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-lg shadow-md p-6 player-card"
+              data-goals="18"
+              data-yellow="5"
+              data-red="1"
+            >
+              <div class="text-center mb-4">
+                <div
+                  class="w-20 h-20 bg-gradient-to-r from-red-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <span class="text-3xl">👨‍🦰</span>
+                </div>
+                <h3 class="font-bold text-lg">هاري كين</h3>
+              </div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center">
+                  <span class="text-2xl mr-2">⚪</span>
+                  <span>توتنهام</span>
+                </span>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between">
+                  <span>⚽ الأهداف:</span>
+                  <span class="font-bold text-green-600">18</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>🟨 كروت صفراء:</span>
+                  <span class="font-bold text-yellow-600">5</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>🟥 كروت حمراء:</span>
+                  <span class="font-bold text-red-600">1</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-lg shadow-md p-6 player-card"
+              data-goals="16"
+              data-yellow="4"
+              data-red="0"
+            >
+              <div class="text-center mb-4">
+                <div
+                  class="w-20 h-20 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <span class="text-3xl">👨‍🦱</span>
+                </div>
+                <h3 class="font-bold text-lg">بوكايو ساكا</h3>
+              </div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center">
+                  <span class="text-2xl mr-2">🔴</span>
+                  <span>أرسنال</span>
+                </span>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between">
+                  <span>⚽ الأهداف:</span>
+                  <span class="font-bold text-green-600">16</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>🟨 كروت صفراء:</span>
+                  <span class="font-bold text-yellow-600">4</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>🟥 كروت حمراء:</span>
+                  <span class="font-bold text-red-600">0</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-lg shadow-md p-6 player-card"
+              data-goals="14"
+              data-yellow="7"
+              data-red="2"
+            >
+              <div class="text-center mb-4">
+                <div
+                  class="w-20 h-20 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <span class="text-3xl">👨‍🦳</span>
+                </div>
+                <h3 class="font-bold text-lg">راشفورد</h3>
+              </div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center">
+                  <span class="text-2xl mr-2">🔴</span>
+                  <span>مانشستر يونايتد</span>
+                </span>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between">
+                  <span>⚽ الأهداف:</span>
+                  <span class="font-bold text-green-600">14</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>🟨 كروت صفراء:</span>
+                  <span class="font-bold text-yellow-600">7</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>🟥 كروت حمراء:</span>
+                  <span class="font-bold text-red-600">2</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-lg shadow-md p-6 player-card"
+              data-goals="12"
+              data-yellow="6"
+              data-red="1"
+            >
+              <div class="text-center mb-4">
+                <div
+                  class="w-20 h-20 bg-gradient-to-r from-indigo-400 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <span class="text-3xl">👨‍🦱</span>
+                </div>
+                <h3 class="font-bold text-lg">جاك جريليش</h3>
+              </div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center">
+                  <span class="text-2xl mr-2">🔵</span>
+                  <span>مانشستر سيتي</span>
+                </span>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between">
+                  <span>⚽ الأهداف:</span>
+                  <span class="font-bold text-green-600">12</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>🟨 كروت صفراء:</span>
+                  <span class="font-bold text-yellow-600">6</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>🟥 كروت حمراء:</span>
+                  <span class="font-bold text-red-600">1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Page Navigation
+      function showPage(pageId) {
+        // Hide all pages
+        document.querySelectorAll(".page").forEach((page) => {
+          page.classList.add("hidden");
+        });
+
+        // Show selected page
+        document.getElementById(pageId + "-page").classList.remove("hidden");
+
+        // Update navigation buttons
+        document.querySelectorAll(".nav-btn").forEach((btn) => {
+          btn.classList.remove("bg-white", "bg-opacity-20");
+        });
+        event.target.classList.add("bg-white", "bg-opacity-20");
+      }
+
+      // Weather functionality
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+          alert("الموقع الجغرافي غير مدعوم في هذا المتصفح");
+        }
+      }
+
+      function showPosition(position) {
+        // Simulate getting weather for user's location
+        const cities = ["القاهرة", "الإسكندرية", "الجيزة", "أسوان", "الأقصر"];
+        const temperatures = ["28°", "25°", "30°", "35°", "32°"];
+        const randomIndex = Math.floor(Math.random() * cities.length);
+
+        document.getElementById("city").textContent = cities[randomIndex];
+        document.getElementById("temperature").textContent =
+          temperatures[randomIndex];
+      }
+
+      function showError(error) {
+        alert("لا يمكن الحصول على موقعك الحالي");
+      }
+
+      // Currency Converter
+      function convertCurrency() {
+        const amount = parseFloat(document.getElementById("amount").value);
+        const fromCurrency = document.getElementById("fromCurrency").value;
+        const toCurrency = document.getElementById("toCurrency").value;
+
+        if (!amount || amount <= 0) {
+          document.getElementById("conversionResult").textContent =
+            "يرجى إدخال مبلغ صحيح";
+          return;
+        }
+
+        // Exchange rates (simplified)
+        const rates = {
+          EGP: { USD: 0.032, SAR: 0.121, EGP: 1 },
+          USD: { EGP: 30.85, SAR: 3.75, USD: 1 },
+          SAR: { EGP: 8.23, USD: 0.267, SAR: 1 },
+        };
+
+        const result = amount * rates[fromCurrency][toCurrency];
+        document.getElementById(
+          "conversionResult"
+        ).textContent = `${result.toFixed(2)} ${toCurrency}`;
+      }
+
+      // Matches Filter
+      function applyFilters() {
+        const teamFilter = document.getElementById("teamFilter").value;
+        const dateFilter = document.getElementById("dateFilter").value;
+        const matchCards = document.querySelectorAll(".match-card");
+
+        matchCards.forEach((card) => {
+          let showCard = true;
+
+          if (teamFilter && !card.dataset.team.includes(teamFilter)) {
+            showCard = false;
+          }
+
+          if (dateFilter && card.dataset.date !== dateFilter) {
+            showCard = false;
+          }
+
+          card.style.display = showCard ? "block" : "none";
+        });
+      }
+
+      // Statistics Sorting
+      function sortStats(criteria) {
+        const grid = document.getElementById("scorersGrid");
+        const cards = Array.from(grid.children);
+
+        cards.sort((a, b) => {
+          const aValue = parseInt(a.dataset[criteria]);
+          const bValue = parseInt(b.dataset[criteria]);
+          return bValue - aValue; // Descending order
+        });
+
+        // Clear and re-append sorted cards
+        grid.innerHTML = "";
+        cards.forEach((card) => grid.appendChild(card));
+      }
+
+      // Initialize page
+      document.addEventListener("DOMContentLoaded", function () {
+        showPage("home");
+      });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'979654c7b38badf5',t:'MTc1NjkxMzg3NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
