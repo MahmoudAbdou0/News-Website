@@ -66,6 +66,8 @@ var CATEGORY = "general";
             dataType : "json",
             url :  API_BASIC_URL , 
             success : (news)=>{
+
+                $("#"+elementID).empty();
         for (let index = 0; index < LIMIT; index++) {
                                                      /*    $(elementID).append (`
                                                         
@@ -77,7 +79,7 @@ var CATEGORY = "general";
                                                                                 <a href="#" class="btn btn-primary">اقرأ المزيد</a>   
                                                                             </div>
                                                                         </div>`); */
-$("#"+elementID).empty();
+
                                                           $("#"+elementID).append (`
                                                         
                                                                         <div class="col-md-4">
