@@ -1,23 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>News Website</title>
+    <title>أخباري</title>
     <!-- Bootstrap & Font Awesome Links -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/main.css" />
 
-
-
-    
     <!-- Google Font -->
-    <p>Yo</p>
   </head>
   <body>
-    <h1>Hello Querydux!</h1>
+    <div>
+      <main></main>
+      <!-- Sidebar Content -->
+      <aside class="lg:col-span-1 border border-primary p-3 mt-6">
+        <!-- Weather Widget -->
+        <section class="row rounded border border-primary p-3 my-5 mx-3">
+          <h3 class="text-center mb-4">حالة الطقس</h3>
+          <div class="text-center">
+            <div class="weatherIcon mb-2 fs-1">☀️</div>
+            <div class="text-danger" id="temperature">28°</div>
+            <div class="" id="locationDisplay">القاهرة</div>
+          </div>
+        </section>
+
+        <!-- Currency Exchange -->
+        <section class="row rounded border border-primary p-3 my-5 mx-3">
+          <h3 class="">أسعار الصرف</h3>
+          <div class="row text-start">
+            <div class="col text-end">
+              <span>دولار الأمريكي</span>
+            </div>
+            <div class="col text-center">
+              <span><span class="text-success">48.85</span> ج.م</span>
+            </div>
+          </div>
+
+          <!-- Currency Calculator -->
+          <div class="p-3 my-3">
+            <h4 class="">حاسبة العملات</h4>
+            <div class="col text-center">
+              <input
+                type="number"
+                id="amount"
+                placeholder="المبلغ"
+                class="row"
+              />
+              <select id="fromCurrency" class="row rounded text-center my-2 px-2 py-1">
+                <option value="EGP">  جنيه مصري     </option>
+                <option value="GBP">  جنيه استرليني </option>
+                <option value="USD">  دولار أمريكي   </option>
+                <option value="CAD">  دولار كندي     </option>
+                <option value="SAR">  ريال سعودي    </option>
+                <option value="KWD">  دينار كويتي   </option>
+                <option value="ُEUR">  يورو          </option>
+                <option value="JPY">  ين            </option>
+              </select>
+
+              <select id="toCurrency" class="row rounded text-center my-2 px-2 py-1">
+                <option value="USD">  دولار أمريكي   </option>
+                <option value="CAD">  دولار كندي     </option>
+                <option value="EGP">  جنيه مصري     </option>
+                <option value="GBP">  جنيه استرليني </option>
+                <option value="SAR">  ريال سعودي    </option>
+                <option value="KWD">  دينار كويتي   </option>
+                <option value="ُEUR">  يورو          </option>
+                <option value="JPY">  ين            </option>
+              </select>
+
+              <button onclick="calcCurrency()" class="row rounded btn btn-primary text-center my-2  px-2 py-1">تحويل</button>
+              <div id="conversionResult" style="direction: ltr;"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Live Matches -->
+        <section class="row rounded border border-primary p-3 my-5 mx-3">
+          <h3 class="">المباريات</h3>
+          <div class=" my-2">
+            <div class="">
+              <span class="">🔴 مباشر</span>
+              <span class="">الدقيقة <span>67</span></span>
+            </div>
+
+            <div class="row">
+              <div class="col-4">
+                <span class="">🔴</span>
+                <span class="">الأهلي</span>
+              </div>
+              <div class="col-4">2 - 1</div>
+              <div class="col-4">
+                <span class="">الزمالك</span>
+                <span class="" id="">⚪</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="my-2">
+            <div class="">
+              <span class=""> انتهت</span>
+              <span class="">90 دقيقة</span>
+            </div>
+
+            <div class="row">
+              <div class="col-4">
+                <span class="">🟡</span>
+                <span class="">الإسماعيلي</span>
+              </div>
+              <div class="col-4">1 - 3</div>
+              <div class="col-4">
+                <span class="">بيراميدز</span>
+                <span class="">🔵</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="my-2">
+            <div class="">
+              <span class="">قادمة</span>
+              <span class="">غداً 20:00</span>
+            </div>
+
+            <div class="row">
+              <div class="col-4">
+                <span class="">🟢</span>
+                <span class="">المصري</span>
+              </div>
+              <div class="col-4">ضد</div>
+              <div class="col-4">
+                <span class="">الجونة</span>
+                <span class="">🟠</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </div>
     <!-- JS Files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/all.min.js"></script>
