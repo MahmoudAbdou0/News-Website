@@ -1,3 +1,9 @@
+
+
+
+
+
+
 var weatherKey = "aaf3430f61ac73a6d7b3cf283e5d3ddc";
 var xchangeKey = "75a2ec4f7a6badaec6a3f93a";
 
