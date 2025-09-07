@@ -110,3 +110,31 @@ span{
     color: rgb(59 130 246 );
     font-size: 12px;
 }
+
+.currencyexchangeCarddata{
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+#amount{
+    padding: 5px;
+    border: lightgray solid 2px;
+    font-size: 12px;
+    border-radius: 10px;
+    height: 40px;
+}
+
+#fromCurrency , #toCurrency {
+    padding: 5px;
+    border: lightgray solid 2px;
+    font-size: 12px;
+    border-radius: 10px;
+    height: 40px;
+    
+}
+
+#conversionResult{
+    direction: ltr ;
+    align-content: center;
+}
+
