@@ -98,9 +98,15 @@ header , .content-area{
 .websitetitle{
      font-weight: 800;
      font-size: 25px;
+     color: aliceblue;
 }
 
 .weatherCardData{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
+}
+
+span{
+    color: rgb(59 130 246 );
+    font-size: 12px;
 }

@@ -1,3 +1,33 @@
+function timeAgoArabic(dateString) {
+  const now = new Date();
+  const past = new Date(dateString);
+  const diffMs = now - past; // الفرق بالـ milliseconds
+
+  const diffSec = Math.floor(diffMs / 1000);
+  const diffMin = Math.floor(diffSec / 60);
+  const diffHours = Math.floor(diffMin / 60);
+  const diffDays = Math.floor(diffHours / 24);
+
+  if (diffHours < 1) {
+    if (diffMin < 1) return "الآن";
+    if (diffMin === 1) return "منذ دقيقة";
+    if (diffMin === 2) return "منذ دقيقتين";
+    return `منذ ${diffMin} دقائق`;
+  }
+
+  if (diffHours < 24) {
+    if (diffHours === 1) return "منذ ساعة";
+    if (diffHours === 2) return "منذ ساعتين";
+    return `منذ ${diffHours} ساعات`;
+  }
+
+  if (diffDays === 1) return "منذ يوم";
+  if (diffDays === 2) return "منذ يومين";
+  return `منذ ${diffDays} أيام`;
+}
+
+
+
 var API_KEY = "9cb0ecbe0a81f60f2350da900477ff38"; 
 
 
@@ -47,7 +77,7 @@ var CATEGORY = "general";
                                                                                 <a href="#" class="btn btn-primary">اقرأ المزيد</a>   
                                                                             </div>
                                                                         </div>`); */
-
+$("#"+elementID).empty();
                                                           $("#"+elementID).append (`
                                                         
                                                                         <div class="col-md-4">
@@ -56,7 +86,7 @@ var CATEGORY = "general";
         <div class="card-body">
           <h5 class="card-title">${news.data[index].title}</h5>
           <p class="card-text">${news.data[index].description}</p>
-           <a href="#" class="btn btn-primary">اقرأ المزيد</a>  
+           <span class="text-xs text-blue-500 mt-2 block">${timeAgoArabic(news.data[index].published_at)}</span>  
         </div>
       </div>
     </div>`);
@@ -73,6 +103,7 @@ var CATEGORY = "general";
 
       
         getnewsdata("general"  , 'politicalnewsSection');
-        getnewsdata("business" , 'economicalnewsSection');
-        getnewsdata("entertainment"  , 'entertainmentalnewssection');
-        getnewsdata("sports"  , 'sportalnewsSection'); 
+        getnewsdata("business" , 'economicnewscardssection');
+        getnewsdata("entertainment"  , 'entertainmentnewscardssection');
+        getnewsdata("sports"  , 'sportsnewscardsection'); 
+

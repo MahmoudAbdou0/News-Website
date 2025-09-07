@@ -15,7 +15,8 @@ var NEWS_BASIC_URL = "https://gnews.io/api/v4/search?";
     url :  NewsEndPoint , 
     success : (news)=>{
    for (let index = 0; index < 3; index++) {
-                                                $(elementID).append (`
+    $("#"+elementID).empty();
+                                                $("#"+elementID).append (`
                                                 
                                                                 <div class="card h-100 col-md-4">
                                                                     <img src="${news.articles[index].image}" class="card-img-top" alt="News 1" />
@@ -36,10 +37,10 @@ var NEWS_BASIC_URL = "https://gnews.io/api/v4/search?";
   }
 
       
-      getnewsdata("world"  , '#politicalnewsSection');
-      getnewsdata("business"  , '#ُeconomicalnewsSection');
-      getnewsdata("entertainment"  , '#entertainmentalnewssection');
-      getnewsdata("sports"  , '#sportalnewsSection');
+      getnewsdata("general"  , 'politicalnewsSection');
+        getnewsdata("business" , 'economicnewscardssection');
+        getnewsdata("entertainment"  , 'entertainmentnewscardssection');
+        getnewsdata("sports"  , 'sportsnewscardsection'); 
 
 
 
