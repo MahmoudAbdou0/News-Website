@@ -59,3 +59,38 @@ header , .content-area{
     font-size: 22px;
     color: rgb(31 41 55 );
 }
+
+.fullcarddata{
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
+     transition: all 0.3s ease;
+}
+
+.card-title{
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(31 41 55 );
+}
+
+
+.fullcarddata:hover{
+    /*transform: scale(1.025);  Pop up effect */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.nav-link{
+    border-radius: 40px;
+     transition: all 0.3s ease;
+}
+
+ .nav-link:hover {
+      background-color: #cdd2d8; 
+      color: #000 !important;    
+      border-radius: 40px;
+}
+
+.weathertitle{
+
+    color: rgb(31 41 55 );
+
+}
