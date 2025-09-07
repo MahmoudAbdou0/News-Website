@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1></h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      var sportsApiKey =
+        "9e15a0310d451d43a72c79f3928df2684bd9f8e0826ded63ee42fb5583c9c875---m";
+      var sportsEndpoint = `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${sportsApiKey}&countryId=Egypt`;
+      console.log(sportsEndpoint);
+
+      $.ajax({
+        type: "get",
+        dataType: "json",
+        url: sportsEndpoint,
+        success: function (data) {
+          $('h1').text(data.success);
+        },
+        error: function (data) {},
+      });
+    </script>
+  </body>
+</html>
