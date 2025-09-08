@@ -32,21 +32,19 @@ $(document).ready(function () {
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;
         var weatherEndpoint = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherKey}&units=metric&lang=ar`;
-        $.ajax(
-            {
-            type: "GET",
-            dataType: "json",
-            url: weatherEndpoint,
-            success: function (data) {
-                var temperature = Math.round(data.main.feels_like);
-                $("#temperature").text(temperature + "°");
-                $("#locationDisplay").text(data.name);
-            },
-            error: function (error) {
-                console.log(error);
-            }
-            }
-        )
+        $.ajax({
+          type: "GET",
+          dataType: "json",
+          url: weatherEndpoint,
+          success: function (data) {
+            var temperature = Math.round(data.main.feels_like);
+            $("#temperature").text(temperature + "°");
+            $("#locationDisplay").text(data.name);
+          },
+          error: function (error) {
+            console.log(error);
+          },
+        });
       },
       function (error) {
         // Error callback
@@ -70,7 +68,6 @@ $(document).ready(function () {
         }
       },
       {
-
         timeout: 60000,
         maximumAge: 0,
       }

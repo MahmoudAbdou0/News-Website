@@ -138,3 +138,7 @@ span{
     align-content: center;
 }
 
+.homeTeamLogo , .awayTeamLogo{
+    height: 30px;
+    width: 30px;
+}
