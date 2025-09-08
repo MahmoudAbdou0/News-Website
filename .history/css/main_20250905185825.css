@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap");
+
+:root {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+}
+* {
+  font-family: "Cairo", sans-serif;
+  direction: rtl;
+}
+
+/* Start Matches Page ( Mahmoud Abdou ) */
+.matches-page h1 {
+  color: var(--primary-color);
+}
+
+.filter h3 svg {
+  color: var(--primary-color);
+}
+/* End Matches Page ( Mahmoud Abdou ) */
