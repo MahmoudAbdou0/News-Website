@@ -130,11 +130,17 @@ span{
     font-size: 12px;
     border-radius: 10px;
     height: 40px;
-    
+
 }
 
 #conversionResult{
     direction: ltr ;
     align-content: center;
+}
+
+
+.livematchescardcontent{
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
 }
 
