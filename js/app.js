@@ -28,7 +28,7 @@ function timeAgoArabic(dateString) {
 
 
 
-var NEW_API_KEY = "f61f9a05a2789f7addef19030d9f8726";
+var NEW_API_KEY = "ed0dc38c340ba1b315e4b89cc0d37aaf";
 var NEWS_BASIC_URL = "https://gnews.io/api/v4/search?";
 
 
