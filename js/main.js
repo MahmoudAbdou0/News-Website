@@ -38,6 +38,8 @@ $(document).ready(function () {
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;
         var weatherEndpoint = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherKey}&units=metric&lang=ar`;
+        
+        console.log(weatherEndpoint);
         $.ajax({
           type: "GET",
           dataType: "json",
@@ -46,6 +48,7 @@ $(document).ready(function () {
             var temperature = Math.round(data.main.feels_like);
             $("#temperature").text(temperature + "°");
             $("#locationDisplay").text(data.name);
+            $("#weatherIcon").html(`<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${data.weather[0].main}" width="40">`);
           },
           error: function (error) {
             console.log(error);
