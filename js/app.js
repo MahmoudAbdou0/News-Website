@@ -1,7 +1,16 @@
+  const currentPage = window.location.pathname.split("/").pop();
+  document.querySelectorAll(".nav-link").forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "page");
+    }
+  });
+
+
 function timeAgoArabic(dateString) {
   const now = new Date();
   const past = new Date(dateString);
-  const diffMs = now - past; // الفرق بالـ milliseconds
+  const diffMs = now - past; 
 
   const diffSec = Math.floor(diffMs / 1000);
   const diffMin = Math.floor(diffSec / 60);
