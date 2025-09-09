@@ -1,6 +1,5 @@
 const API_KEY = "63cc1f86357b7aa3a1d29001d144b75344ef7c3fa1f70c926f1da259ab9f2e88";
-const API_URL = `https://allsportsapi.com/api/football/?action=get_events&from=2025-09-01&to=2025-09-20&league_id=152&APIkey=63cc1f86357b7aa3a1d29001d144b75344ef7c3fa1f70c926f1da259ab9f2e88
-    `;
+const API_URL = `https://apiv2.allsportsapi.com/football/?met=Standings&leagueId=152&APIkey=689ad9175e01c1534a675d7a00f8bbe95819a71058e3fd184b41946b0fc0bc04`;
 
 console.log(API_URL);
 $(document).ready(function () {
@@ -8,30 +7,30 @@ $(document).ready(function () {
         url: API_URL,
         method: "GET",
         success: function (data) {
-            console.log(data); // للتأكد من البيانات
+            console.log(data.result); // للتأكد من البيانات
             let tableBody = $("table tbody");
             tableBody.empty();
 
-            data.forEach((team) => {
+            data.result.total.forEach((team) => {
                 let row = `
           <tr>
-            <td class="fw-bold text-yellow">${team.overall_league_position}</td>
+            <td class="fw-bold text-yellow">${team.standing_place}</td>
             <td>
               <div class="team-cell">
-                <img src="${team.team_badge}" alt="${team.team_name}" width="25" class="me-2"/>
-                <span class="team-name">${team.team_name}</span>
+                <img src="${team.team_logo}" alt="${team.standing_team}" width="25" class="me-2"/>
+                <span class="team-name">${team.standing_team}</span>
               </div>
             </td>
-            <td>${team.overall_league_payed}</td>
-            <td class="text-green">${team.overall_league_W}</td>
-            <td class="text-yellow">${team.overall_league_D}</td>
-            <td class="text-red">${team.overall_league_L}</td>
-            <td>${team.overall_league_GF}</td>
-            <td>${team.overall_league_GA}</td>
-            <td class="${team.overall_league_GF - team.overall_league_GA >= 0 ? 'text-green' : 'text-red'}">
-              ${team.overall_league_GF - team.overall_league_GA}
+            <td>${team.standing_P}</td>
+            <td class="text-green">${team.standing_W}</td>
+            <td class="text-yellow">${team.standing_D}</td>
+            <td class="text-red">${team.standing_L}</td>
+            <td>${team.standing_F}</td>
+            <td>${team.standing_A}</td>
+            <td class="${team.standing_GD >= 0 ? 'text-green' : 'text-red'}">
+              ${team.standing_GD}
             </td>
-            <td class="points fw-bold">${team.overall_league_PTS}</td>
+            <td class="points fw-bold">${team.standing_PTS}</td>
           </tr>
         `;
                 tableBody.append(row);

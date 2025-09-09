@@ -83,7 +83,7 @@ $(document).ready(function () {
 
 const leagueId = 152;
 
-let filterData = { from: "2025-08-11", to: "2025-08-20"};
+let filterData = { from: "2025-08-16", to: "2025-08-20"};
 //let searchParams = getSearchParams(filterData);
 /* ${
   searchParams ? "&" + searchParams : ""
