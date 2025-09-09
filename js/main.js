@@ -48,7 +48,7 @@ $(document).ready(function () {
             var temperature = Math.round(data.main.feels_like);
             $("#temperature").text(temperature + "°");
             $("#locationDisplay").text(data.name);
-            $("#weatherIcon").html(`<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${data.weather[0].main}" width="40">`);
+            $("#weatherIcon").html(`<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${data.weather[0].main}" width="70">`);
           },
           error: function (error) {
             console.log(error);
