@@ -39,7 +39,7 @@ async function getAllTeams() {
 }
 getAllTeams();
 
-async function getMatches(Url) {
+ async function getMatches(Url) {
   fetch(Url, {
     method: "GET",
   })
