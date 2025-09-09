@@ -16,14 +16,12 @@
       <header
         class="d-flex justify-content-between align-items-center py-3 gradient-bg sticky-top"
       >
-      <div class="d-flex align-items-center">
-        <a href="index.html" class="d-flex align-items-center text-decoration-none">
+        <div class="d-flex align-items-center">
           <img src="images/logo2.png" alt="Logo" width="40" />
-          <h1 class="websitetitle ms-2 mb-0">موقع كوريريدكس للأخبار</h1>
-        </a>
-      </div>
+          <h1 class="websitetitle">موقع كوريريدكس للأخبار</h1>
+        </div>
 
-        <nav >
+        <nav>
           <ul class="nav">
             <li class="nav-item">
               <a class="nav-link active" href="index.html">الرئيسية</a>
@@ -41,7 +39,7 @@
         </nav>
       </header>
 
-      <main class="container">
+      <main class="content-area">
         <div class="row">
           <div class="col-md-9">
             <div
@@ -343,17 +341,79 @@
                 </div>
               </div>
             </section>
-        <!-- Live Matches -->
-        <section class="row p-3 my-5 mx-3 livematchescardcontent" >
-          <h3 class="h4 text-center mb-4 "> ⚽  المباريات المباشرة </h3>
-          <div class="row" id="LiveMatches"></div>
-          <div class="row" id="FinishedMatches"></div>
-          <div class="row" id="UpcomingMatches"></div>
-          
-        </section>
-            </aside>
-            
-         </div>
+
+            <!-- Live Matches -->
+            <section class="row p-3 my-5 mx-3 livematchescardcontent">
+              <h3 class="h4 text-center mb-4">⚽ المباريات المباشرة</h3>
+              <div class="my-2">
+                <div class="">
+                  <span class="matchStatus">مباشرة</span>
+                  <span class="matchTime">90 الدقيقة</span>
+                </div>
+
+                <div class="">
+                  <div class="container">
+                    <span class="homeTeamLogo"></span>
+                    <span class="homeTeamName"></span>
+                  </div>
+                  <div class="match result"></div>
+                  <div class="container">
+                    <span class="awayTeamName"></span>
+                    <span class="awayTeamLogo"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="matchDone my-2">
+                <div class="">
+                  <span class="matchStatus">منتهية</span>
+                  <span class="matchTime">90 دقيقة</span>
+                </div>
+
+                <div class="">
+                  <div class="container">
+                    <span class="homeTeamLogo"></span>
+                    <span class="homeTeamName"></span>
+                  </div>
+                  <div class="match result"></div>
+                  <div class="container">
+                    <span class="awayTeamName"></span>
+                    <span class="awayTeamLogo"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="matchUpcoming my-2">
+                <div class="">
+                  <span class="matchStatus">قادمة</span>
+                  <span class="matchTime">الموعد</span>
+                </div>
+
+                <div class="">
+                  <div class="container">
+                    <img
+                      class="homeTeamLogo"
+                      alt="homeTeamLogo"
+                      title="homeTeamLogo"
+                      src="../Images/default_team_logo.jpg"
+                    />
+                    <span class="homeTeamName"></span>
+                  </div>
+                  <div class="matchResult"></div>
+                  <div class="container">
+                    <span class="awayTeamName text-xs"></span>
+                    <img
+                      class="awayTeamLogo"
+                      alt="awayTeamLogo"
+                      title="awayTeamLogo"
+                      src="../Images/default_team_logo.jpg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </aside>
+        </div>
       </main>
     </div>
 
@@ -362,7 +422,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/all.min.js"></script>
-    <script src="js/main.js" type="module"></script>
+    <script src="js/main.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
