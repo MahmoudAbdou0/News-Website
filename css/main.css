@@ -20,11 +20,14 @@ header{
 
 .politicalnewssectionttitle{
     border-bottom: rgb(59 130 246) 4px solid;
+    padding-right: 0;
+   
 }
 .politicalnewssectionttitle>h2{
     font-weight: 700;
     font-size: 22px;
     color: rgb(31 41 55 );
+     padding-right: 0;
 }
 .sportsnewssectionttitle
 {
@@ -36,6 +39,7 @@ header{
     font-weight: 700;
     font-size: 22px;
     color: rgb(31 41 55 );
+    padding-right: 0;
 }
 
 .entertianmentnewssectionttitle{
@@ -47,6 +51,7 @@ header{
     font-weight: 700;
     font-size: 22px;
     color: rgb(31 41 55 );
+    padding-right: 0;
 }
 
 .economicnewsectiontitle{
@@ -58,6 +63,7 @@ header{
     font-weight: 700;
     font-size: 22px;
     color: rgb(31 41 55 );
+    padding-right: 0;
 }
 
 .fullcarddata{
