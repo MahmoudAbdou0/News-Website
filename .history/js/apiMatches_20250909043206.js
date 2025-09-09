@@ -145,31 +145,26 @@ $("#filter-btn").on("click", (e) => {
   e.preventDefault();
   let season = $(".filters #seasonFilter").val();
   const teamId = $(".filters #teamFilter").val() || "";
-  // const matchesFilter = $(".filters #teamFilter").val();
+  const matchesFilter = $(".filters #teamFilter").val();
   const date = $(".filters #dateFilter").val();
   let from = $(".filters #dateFrom").val();
   let to = $(".filters #dateTo").val();
 
-  // const today = new Date().toISOString().split("T")[0];
-
-  if (date) {
-    from = date;
-    to = date;
-    // Reset season
-    season = date.substring(0, 4);
-    $(".filters #seasonFilter").val(season);
-  } else {
-    from = from || `${season}-08-10`;
-    to = to || `${+season + 1}-05-31`;
-    // Reset season
-    season = from.substring(0, 4);
-    $(".filters #seasonFilter").val(season);
-  }
-  // if (matchesFilter === "next") {
-  //   from = today;
-  // } else if (matchesFilter === "previous") {
-  //   to = today;
-  // }
+  const today = new Date().toISOString().split("T")[0];
+  if (matchesFilter === "")
+    if (date) {
+      from = date;
+      to = date;
+      // Reset season
+      season = date.substring(0, 4);
+      $(".filters #seasonFilter").val(season);
+    } else {
+      from = from || `${season}-08-10`;
+      to = to || `${+season + 1}-05-31`;
+      // Reset season
+      season = from.substring(0, 4);
+      $(".filters #seasonFilter").val(season);
+    }
   filterData = {
     // season,
     // date,
