@@ -94,7 +94,7 @@ let Url = `https://apiv2.allsportsapi.com/football/?met=Fixtures&leagueId=${leag
  function getMatchesdata ()
 {
  $.ajax({
-    url: Url, // 🔗 رابط API
+    url: Url,
     method: "GET",
     dataType: "json",
     success: function (response) {
@@ -114,19 +114,19 @@ let Url = `https://apiv2.allsportsapi.com/football/?met=Fixtures&leagueId=${leag
           let matchDate = match.event_date;
 
           let matchCard = `
-            <div class="matchCard my-3 p-2 border rounded">
-              <div class="d-flex justify-content-between mb-2">
+            <div class="matchCard my-2 p-1 border rounded">
+              <div class="d-flex justify-content-between mb-1">
                 <span class="matchStatus"></span>
                 <span class="matchTime"></span>
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="team d-flex align-items-center">
                   ${homeLogo}
-                  <span class="homeTeamName ms-2">${homeTeam}</span>
+                  <span class="homeTeamName ms-1">${homeTeam}</span>
                 </div>
                 <div class="result fw-bold text-center">${score}</div>
                 <div class="team d-flex align-items-center">
-                  <span class="awayTeamName me-2">${awayTeam}</span>
+                  <span class="awayTeamName me-1">${awayTeam}</span>
                   ${awayLogo}
                 </div>
               </div>
