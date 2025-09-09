@@ -1,0 +1,55 @@
+:root {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+}
+* {
+  font-family: "Cairo", sans-serif;
+  direction: rtl;
+  outline-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Start Matches Page ( Mahmoud Abdou ) */
+.matches-page h1 {
+  color: var(--primary-color);
+}
+
+.filters h3 {
+  color: var(--primary-color);
+}
+
+.filters h3 svg {
+  border-left: 2px solid var(--primary-color);
+}
+
+.filters .row button {
+  border-color: var(--primary-color);
+  outline: none;
+  background-color: transparent;
+}
+
+.filters .row button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.match-card span > img {
+  width: 32px; /* حجم ثابت */
+  height: 32px; /* نفس العرض عشان يفضل مربع */
+  object-fit: contain; /* يخلي الصورة مظبوطة جوه المربع */
+}
+
+/* Placeholder شبيه لتواريخ */
+input[type="date"]::before {
+  content: attr(placeholder);
+  color: #6c757d; /* لون placeholder زي البوتستراب */
+  position: absolute;
+  margin-left: 10px;
+}
+
+/* لو فيه قيمة ينشال الـ placeholder */
+input[type="date"]:valid::before {
+  content: "" !important;
+}
+
+/* End Matches Page ( Mahmoud Abdou ) */

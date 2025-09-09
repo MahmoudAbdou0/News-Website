@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matches</title>
+    <!-- Bootstrap & Font Awesome Links -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- Google Font -->
+  </head>
+  <body>
+    <!-- Matches Page -->
+    <div id="matches-page" class="matches-page page hidden">
+      <div class="container mx-auto px-4 py-8">
+        <h1 class="fw-bold text-center my-4">
+          ⚽ مباريات الدوري الإنجليزي الممتاز
+        </h1>
+
+        <!-- Filters -->
+        <div class="filters bg-white rounded shadow-sm p-4 mb-8">
+          <h3 class="fw-bold mb-4">
+            <i class="fa-solid fa-magnifying-glass px-2 mx-2"></i> فلاتر البحث
+          </h3>
+          <div class="row">
+            <select id="teamFilter" class="p-3 border rounded-lg">
+              <option value="">جميع الفرق</option>
+              <option value="مانشستر سيتي">مانشستر سيتي</option>
+              <option value="ليفربول">ليفربول</option>
+              <option value="تشيلسي">تشيلسي</option>
+              <option value="أرسنال">أرسنال</option>
+            </select>
+            <input type="date" id="dateFilter" class="p-3 border rounded-lg" />
+            <button
+              onclick="applyFilters()"
+              class="bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600"
+            >
+              تطبيق الفلاتر
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JS Files -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
