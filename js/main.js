@@ -1,8 +1,10 @@
 
 //import { getSearchParams } from "./helper";
 
-var weatherKey = "aaf3430f61ac73a6d7b3cf283e5d3ddc";
-var xchangeKey = "75a2ec4f7a6badaec6a3f93a";
+//var weatherKey = "aaf3430f61ac73a6d7b3cf283e5d3ddc";
+var weatherKey = "381b924806df87bd627652ddaac0634c";
+//var xchangeKey = "75a2ec4f7a6badaec6a3f93a";
+var xchangeKey = "86c9f5b090f410ff3e2b972f";
 var allsportsKey = "689ad9175e01c1534a675d7a00f8bbe95819a71058e3fd184b41946b0fc0bc04";
 
 function calcCurrency() {
