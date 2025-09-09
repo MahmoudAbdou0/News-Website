@@ -150,10 +150,7 @@ span{
     border-radius: 10px;
 }
 
-.homeTeamLogo , .awayTeamLogo{
-    height: 30px;
-    width: 30px;
-}
+
 
 .nav-link.active {
   background-color: #0d6efd;
