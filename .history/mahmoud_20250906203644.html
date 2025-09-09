@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matches</title>
+    <!-- Bootstrap & Font Awesome Links -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Matches Page -->
+    <div id="matches-page" class="matches-page page hidden">
+      <div class="container px-4 py-8">
+        <h1 class="fw-bold text-center my-4">
+          ⚽ مباريات الدوري الإنجليزي الممتاز
+        </h1>
+
+        <!-- Filters -->
+        <div class="filters bg-white rounded shadow-sm p-4 mb-3">
+          <h3 class="fw-bold mb-4">
+            <i class="fa-solid fa-magnifying-glass px-2 mx-2"></i> فلاتر البحث
+          </h3>
+          <div class="row">
+            <div class="col-md-6 col-lg-4">
+              <select id="teamFilter" class="p-3 border rounded w-100">
+                <option value="">جميع الفرق</option>
+                <option value="مانشستر سيتي">مانشستر سيتي</option>
+                <option value="ليفربول">ليفربول</option>
+                <option value="تشيلسي">تشيلسي</option>
+                <option value="أرسنال">أرسنال</option>
+              </select>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <input
+                type="date"
+                id="dateFilter"
+                class="p-3 border rounded w-100"
+              />
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <button onclick="applyFilters()" class="p-3 rounded w-100">
+                تطبيق الفلاتر
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Matches List -->
+        <div class="matches-list row text-center" id="matchesList">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="match-card border rounded p-3 shadow-sm">
+              <!-- حالة المباراة -->
+              <div class="mb-2 fw-bold text-danger">انتهت</div>
+
+              <!-- تفاصيل الفرق والنتيجة -->
+              <div class="row align-items-center">
+                <!-- الفريق الأول -->
+                <div class="col-4 d-flex flex-column align-items-center">
+                  <span class="fs-3">🔵</span>
+                  <span>مانشستر سيتي</span>
+                </div>
+
+                <!-- النتيجة -->
+                <div class="col-4 d-flex flex-column align-items-center">
+                  <span class="fs-4 fw-bold">3 - 1</span>
+                  <span class="text-muted small">النتيجة النهائية</span>
+                </div>
+
+                <!-- الفريق الثاني -->
+                <div class="col-4 d-flex flex-column align-items-center">
+                  <span class="fs-3">🔴</span>
+                  <span>مانشستر يونايتد</span>
+                </div>
+              </div>
+
+              <!-- تاريخ المباراة -->
+              <p class="match-date mt-3 text-muted small">
+                15 يناير 2024 - 17:30
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS Files -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <script type="module" src="js/mahmoud.js"></script>
+  </body>
+</html>

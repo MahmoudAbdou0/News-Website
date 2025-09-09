@@ -119,6 +119,7 @@
         dataType: "json",
         url: sportsEndpoint,
         success: function (matches) {
+          
           function fillList(matchStatus, i) {
             $(`${matchStatus} .matchTime`).text(matches.result[i].event_time);
             $(`${matchStatus} .homeTeamLogo`).attr(
@@ -140,7 +141,9 @@
               `${matches.result[i].event_final_result}`
             );
           }
+          
           let matchListComplete = false;
+          
           while (!matchListComplete) {
             let i = 0;
             let matchLiveFilled = false;

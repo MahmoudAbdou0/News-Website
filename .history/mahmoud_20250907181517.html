@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matches</title>
+    <!-- Bootstrap & Font Awesome Links -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Matches Page -->
+    <div id="matches-page" class="matches-page page hidden">
+      <div class="container px-4 py-8">
+        <h1 class="fw-bold text-center my-4">
+          ⚽ مباريات الدوري الإنجليزي الممتاز
+        </h1>
+
+        <!-- Filters -->
+        <div class="filters bg-white rounded shadow-sm p-4 mb-3">
+          <h3 class="fw-bold mb-4">
+            <i class="fa-solid fa-magnifying-glass px-2 mx-2"></i> فلاتر البحث
+          </h3>
+          <form class="row">
+            <div class="col-md-6 col-lg-4 mb-2">
+              <select id="seasonFilter" class="p-3 border rounded w-100">
+                <option value="2023">موسم 2023</option>
+                <option value="2022">موسم 2022</option>
+                <option value="2021">موسم 2021</option>
+              </select>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-2">
+              <select id="teamFilter" class="p-3 border rounded w-100">
+                <option value="">جميع الفرق</option>
+                <option value="مانشستر سيتي">مانشستر سيتي</option>
+                <option value="ليفربول">ليفربول</option>
+                <option value="تشيلسي">تشيلسي</option>
+                <option value="أرسنال">أرسنال</option>
+              </select>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-2">
+              <input
+                type="date"
+                id="dateFilter"
+                placeholder="اختر التاريخ"
+                class="p-3 border rounded w-100"
+              />
+            </div>
+            <div class="col-md-6 col-lg-4 mb-2">
+              <input
+                type="date"
+                id="dateFrom"
+                placeholder="من"
+                class="p-3 border rounded w-100"
+              />
+            </div>
+            <div class="col-md-6 col-lg-4 mb-2">
+              <input
+                type="date"
+                id="dateTo"
+                placeholder="إلي"
+                class="p-3 border rounded w-100"
+              />
+            </div>
+            <div class="col-md-6 col-lg-4 mb-2">
+              <button id="filter-btn" class="p-3 rounded w-100">
+                تطبيق الفلاتر
+              </button>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-2">
+              <button id="reset-btn" type="reset" class="p-3 rounded w-100">
+                ازالة الفلاتر
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- Matches List -->
+        <div class="matches-list row text-center" id="matchesList"></div>
+      </div>
+    </div>
+
+    <!-- JS Files -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <script type="module" src="js/mahmoud.js"></script>
+  </body>
+</html>
