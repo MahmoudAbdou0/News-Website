@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>موقع كوريريدكس للأخبار</title>
-    <link rel="icon" type="image/png" href="images/logo2.png">
+    <title>Matches</title>
     <!-- Bootstrap & Font Awesome Links -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/all.min.css" />
@@ -25,19 +24,17 @@
       class="d-flex justify-content-between align-items-center py-3 gradient-bg sticky-top"
     >
       <div class="d-flex align-items-center">
-        <a href="index.html" class="d-flex align-items-center text-decoration-none">
-          <img src="images/logo2.png" alt="Logo" width="40" />
-          <h1 class="websitetitle ms-2 mb-0">موقع كوريريدكس للأخبار</h1>
-        </a>
+        <img src="images/logo2.png" alt="Logo" width="40" />
+        <h1 class="websitetitle">موقع كوريريدكس للأخبار</h1>
       </div>
 
-      <nav >
+      <nav>
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">الرئيسية</a>
+            <a class="nav-link active" href="index.html">الرئيسية</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="matches.html">المباريات</a>
+            <a class="nav-link" href="matches.html">المباريات</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="matches-table.html">جدول الدورى</a>
@@ -68,8 +65,8 @@
           </h3>
           <div class="collapse" id="collapseExample">
             <form class="row">
-              <div class="col-md-6 mb-2">
-                <select title="seasonFilter" id="seasonFilter" class="p-3 border rounded w-100">
+              <div class="col-md-4 mb-2">
+                <select id="seasonFilter" class="p-3 border rounded w-100">
                   <option value="2025">موسم 2025/2026</option>
                   <option value="2024">موسم 2024/2025</option>
                   <option value="2023">موسم 2023/2024</option>
@@ -77,18 +74,24 @@
                   <option value="2021">موسم 2021/2022</option>
                 </select>
               </div>
-              <div class="col-md-6 mb-2">
-                <select title="teamFilter" id="teamFilter" class="p-3 border rounded w-100">
+              <div class="col-md-4 mb-2">
+                <select id="teamFilter" class="p-3 border rounded w-100">
                   <option value="">جميع الفرق</option>
+                  <!-- <option value="Manchester City">مانشستر سيتي</option>
+                  <option value="ليفربول">ليفربول</option>
+                  <option value="تشيلسي">تشيلسي</option>
+                  <option value="أرسنال">أرسنال</option> -->
                 </select>
               </div>
-              <!-- <div class="col-md-4 mb-2">
+              <div class="col-md-4 mb-2">
                 <select id="timeFilter" class="p-3 border rounded w-100">
-                  <option value="">جميع المباريات</option>
-                  <option value="next">القادمة</option>
-                  <option value="previous">السابقة</option>
+                  <option value="">جميع الفرق</option>
+                  <!-- <option value="Manchester City">مانشستر سيتي</option>
+                  <option value="ليفربول">ليفربول</option>
+                  <option value="تشيلسي">تشيلسي</option>
+                  <option value="أرسنال">أرسنال</option> -->
                 </select>
-              </div> -->
+              </div>
               <div class="col-md-4 mb-2">
                 <label for="dateFilter" class="form-label">اختر التاريخ</label>
 

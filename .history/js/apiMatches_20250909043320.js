@@ -39,7 +39,7 @@ async function getAllTeams() {
 }
 getAllTeams();
 
- async function getMatches(Url) {
+async function getMatches(Url) {
   fetch(Url, {
     method: "GET",
   })
@@ -145,13 +145,17 @@ $("#filter-btn").on("click", (e) => {
   e.preventDefault();
   let season = $(".filters #seasonFilter").val();
   const teamId = $(".filters #teamFilter").val() || "";
-  // const matchesFilter = $(".filters #teamFilter").val();
+  const matchesFilter = $(".filters #teamFilter").val();
   const date = $(".filters #dateFilter").val();
   let from = $(".filters #dateFrom").val();
   let to = $(".filters #dateTo").val();
 
-  // const today = new Date().toISOString().split("T")[0];
-
+  const today = new Date().toISOString().split("T")[0];
+  if (matchesFilter === "next") {
+    from = today;
+  } else if (matchesFilter === "previous") {
+    to === today;
+  }
   if (date) {
     from = date;
     to = date;
@@ -165,11 +169,6 @@ $("#filter-btn").on("click", (e) => {
     season = from.substring(0, 4);
     $(".filters #seasonFilter").val(season);
   }
-  // if (matchesFilter === "next") {
-  //   from = today;
-  // } else if (matchesFilter === "previous") {
-  //   to = today;
-  // }
   filterData = {
     // season,
     // date,
