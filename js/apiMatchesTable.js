@@ -30,7 +30,11 @@ $(document).ready(function () {
             <td class="${team.standing_GD >= 0 ? 'text-green' : 'text-red'}">
               ${team.standing_GD}
             </td>
-            <td class="points fw-bold">${team.standing_PTS}</td>
+            <td class="points fw-bold">
+            <span class="d-inline-block bg-dark text-white rounded-circle fw-bold text-center" 
+                  style="width: 40px; height: 40px; line-height: 40px;  font-size: 1.05rem;">
+              ${team.standing_PTS}
+            </span></td>
           </tr>
         `;
                 tableBody.append(row);
