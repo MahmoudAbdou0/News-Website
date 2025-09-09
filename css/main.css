@@ -14,17 +14,20 @@
     color: white;
 }
 
-header , .content-area{
+header{
     padding: 0 5% 0 ;
 }
 
 .politicalnewssectionttitle{
     border-bottom: rgb(59 130 246) 4px solid;
+    padding-right: 0;
+   
 }
 .politicalnewssectionttitle>h2{
     font-weight: 700;
     font-size: 22px;
     color: rgb(31 41 55 );
+     padding-right: 0;
 }
 .sportsnewssectionttitle
 {
@@ -36,6 +39,7 @@ header , .content-area{
     font-weight: 700;
     font-size: 22px;
     color: rgb(31 41 55 );
+    padding-right: 0;
 }
 
 .entertianmentnewssectionttitle{
@@ -47,6 +51,7 @@ header , .content-area{
     font-weight: 700;
     font-size: 22px;
     color: rgb(31 41 55 );
+    padding-right: 0;
 }
 
 .economicnewsectiontitle{
@@ -58,6 +63,7 @@ header , .content-area{
     font-weight: 700;
     font-size: 22px;
     color: rgb(31 41 55 );
+    padding-right: 0;
 }
 
 .fullcarddata{
@@ -147,4 +153,11 @@ span{
 .homeTeamLogo , .awayTeamLogo{
     height: 30px;
     width: 30px;
+}
+
+.nav-link.active {
+  background-color: #0d6efd;
+  color: #fff !important;
+  border-radius: 20px;
+  padding: 6px 15px;
 }
