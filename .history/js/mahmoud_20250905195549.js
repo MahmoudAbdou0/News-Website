@@ -1,5 +1,0 @@
-const matchCard = `
-  <div>
-  
-  </div>
-`;
