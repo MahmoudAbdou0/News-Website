@@ -83,14 +83,14 @@ $(document).ready(function () {
 
 const leagueId = 152;
 
-let filterData = { from: "2025-08-16", to: "2025-08-20"};
+let filterData = { from: "2025-08-31", to: "2025-09-15"};
 //let searchParams = getSearchParams(filterData);
 /* ${
   searchParams ? "&" + searchParams : ""
 } */
 
 let Url = `https://apiv2.allsportsapi.com/football/?met=Fixtures&leagueId=${leagueId}&APIkey=${allsportsKey}&timezone=Africa/Cairo&from=${filterData.from}&to=${filterData.to}`;
-
+console.log(Url);
  function getMatchesdata ()
 {
  $.ajax({
@@ -112,11 +112,12 @@ let Url = `https://apiv2.allsportsapi.com/football/?met=Fixtures&leagueId=${leag
           let status = match.event_status;
           let matchTime = match.event_time;
           let matchDate = match.event_date;
+          
 
           let matchCard = `
             <div class="matchCard m-2 p-1 border rounded">
               <div class="d-flex justify-content-between m-1">
-                <span class="matchStatus"></span>
+                <span class="matchStatus">${matchDate}</span>
                 <span class="matchTime"></span>
               </div>
               <div class="d-flex justify-content-between align-items-center">
@@ -136,19 +137,19 @@ let Url = `https://apiv2.allsportsapi.com/football/?met=Fixtures&leagueId=${leag
           if (match.event_live == "1" || status == "Live") {
             $("#LiveMatches").append(
               $(matchCard)
-                .find(".matchStatus").text("مباشرة").end()
+                .find(".matchStatus").text("🔴 مباشرة").end()
                 .find(".matchTime").text("الدقيقة " + status).end()
             );
           } else if (status == "Finished") {
             $("#FinishedMatches").append(
               $(matchCard)
-                .find(".matchStatus").text("منتهية").end()
+                .find(".matchStatus").text("✅ منتهية").end()
                 .find(".matchTime").text("90 دقيقة").end()
             );
           } else {
             $("#UpcomingMatches").append(
               $(matchCard)
-                .find(".matchStatus").text("قادمة").end()
+                .find(".matchStatus").text("⏰ قادمة").end()
                 .find(".matchTime").text(matchDate + " - " + matchTime).end()
                 .find(".result").text("VS").end()
             );
