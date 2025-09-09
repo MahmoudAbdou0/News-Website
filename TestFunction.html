@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+function getMatchStatus(startTimeStr) {
+  // startTimeStr format: "HH:mm" (Cairo time)
+  const now = new Date(
+    new Date().toLocaleString("en-US", { timeZone: "Africa/Cairo" })
+  );
+
+  // Split HH:mm
+  const [hours, minutes] = startTimeStr.split(":").map(Number);
+
+  // Match start and end (today)
+  const matchStart = new Date(now);
+  matchStart.setHours(hours, minutes, 0, 0);
+  const matchEnd = new Date(matchStart.getTime() + 90 * 60 * 1000);
+
+  // Status checks
+  if (now >= matchStart && now <= matchEnd) {
+    return "LIVE ⚽🔥";
+  } else if (now > matchEnd) {
+    return "PASSED ❌";
+  } else {
+    // Match in future → decide Today/Tomorrow & Morning/Evening
+    const isTomorrow = matchStart.getDate() !== now.getDate();
+    const period = hours < 12 ? "Morning" : "Evening";
+    return isTomorrow
+      ? `UPCOMING: Tomorrow ${period}`
+      : `UPCOMING: Today ${period}`;
+  }
+}
+
+// ✅ Examples
+console.log(getMatchStatus("09:00")); // If later today morning → "UPCOMING: Today Morning"
+console.log(getMatchStatus("16:15")); // If later today morning → "UPCOMING: Today Morning"
+console.log(getMatchStatus("20:30")); // If later today evening → "UPCOMING: Today Evening"
+console.log(getMatchStatus("23:00")); // If match tomorrow → "UPCOMING: Tomorrow Evening"
+
+
+    </script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .homeTeamLogo,
+      .awayTeamLogo {
+        height: 30px;
+        width: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="row rounded border border-primary p-3 my-5 mx-3" dir="ltr">
+      <h3>المباريات</h3>
+      <div class="matchGoing my-2">
+        <div class="">
+          <span class="matchStatus">مباشرة</span>
+          <span class="matchTime">90 الدقيقة</span>
+        </div>
+
+        <div class="">
+          <div class="container">
+            <span class="homeTeamLogo"></span>
+            <span class="homeTeamName"></span>
+          </div>
+          <div class="match result"></div>
+          <div class="container">
+            <span class="awayTeamName"></span>
+            <span class="awayTeamLogo"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="matchDone my-2">
+        <div class="">
+          <span class="matchStatus">منتهية</span>
+          <span class="matchTime">90 دقيقة</span>
+        </div>
+
+        <div class="">
+          <div class="container">
+            <span class="homeTeamLogo"></span>
+            <span class="homeTeamName"></span>
+          </div>
+          <div class="match result"></div>
+          <div class="container">
+            <span class="awayTeamName"></span>
+            <span class="awayTeamLogo"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="matchUpcoming my-2">
+        <div class="">
+          <span class="matchStatus">قادمة</span>
+          <span class="matchTime">الموعد</span>
+        </div>
+
+        <div class="">
+          <div class="container">
+            <img
+              class="homeTeamLogo"
+              alt="homeTeamLogo"
+              title="homeTeamLogo"
+              src="../Images/default_team_logo.jpg"
+            />
+            <span class="homeTeamName"></span>
+          </div>
+          <div class="matchResult"></div>
+          <div class="container">
+            <span class="awayTeamName text-xs"></span>
+            <img
+              class="awayTeamLogo"
+              alt="awayTeamLogo"
+              title="awayTeamLogo"
+              src="../Images/default_team_logo.jpg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      function getMatchStatus(startTimeStr) {
+        // startTimeStr format: "HH:mm" (Cairo time)
+        const now = new Date(
+          new Date().toLocaleString("en-US", { timeZone: "Africa/Cairo" })
+        );
+
+        // Split HH:mm
+        const [hours, minutes] = startTimeStr.split(":").map(Number);
+
+        // Match start and end (today)
+        const matchStart = new Date(now);
+        matchStart.setHours(hours, minutes, 0, 0);
+        const matchEnd = new Date(matchStart.getTime() + 90 * 60 * 1000);
+
+        // Status checks
+        if (now >= matchStart && now <= matchEnd) {
+          return "LIVE";
+        } else if (now > matchEnd) {
+          return "PASSED";
+        } else {
+          return "UPCOMING";
+        }
+      }
+
+      var sportsApiKey =
+        "9e15a0310d451d43a72c79f3928df2684bd9f8e0826ded63ee42fb5583c9c875";
+
+      var sportsEndpoint = `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${sportsApiKey}&from=2023-05-01&to=2023-05-15`;
+
+      $.ajax({
+        type: "get",
+        dataType: "json",
+        url: sportsEndpoint,
+        success: function (matches) {
+          function fillList(matchStatus, i) {
+            $(`${matchStatus} .matchTime`).text(matches.result[i].event_time);
+            $(`${matchStatus} .homeTeamLogo`).attr(
+              "src",
+              `${matches.result[i].home_team_logo}`
+            );
+            $(`${matchStatus} .awayTeamLogo`).attr(
+              "src",
+              `${matches.result[i].away_team_logo}`
+            );
+
+            $(`${matchStatus} .homeTeamName`).text(
+              matches.result[i].event_home_team
+            );
+            $(`${matchStatus} .awayTeamName`).text(
+              matches.result[i].event_away_team
+            );
+            $(`${matchStatus} .matchResult`).text(
+              `${matches.result[i].event_final_result}`
+            );
+          }
+          let matchListComplete = false;
+          while (!matchListComplete) {
+            let i = 0;
+            let matchLiveFilled = false;
+            let matchDoneFilled = false;
+            let matchUpcomingFilled = false;
+            switch (getMatchStatus(matches.result[i].event_time)) {
+              case "LIVE":
+                console.log(getMatchStatus(matches.result[i].event_time));
+                fillList('.matchGoing', i);
+                matchLiveFilled = true;
+                console.log("matchLiveFilled DONE");
+                break;
+              case "PASSED":
+                console.log(getMatchStatus(matches.result[i].event_time));
+                
+                fillList('.matchDone', i);
+                matchDoneFilled = true;
+                console.log("matchDoneFilled DONE");
+
+                break;
+              case "UPCOMING":
+                console.log(getMatchStatus(matches.result[i].event_time));
+                fillList('.matchUpcoming', i);
+                matchUpcomingFilled = true;
+                console.log("matchUpcomingFilled DONE");
+
+                break;
+              default:
+                console.log("error: couldn't determine match status");
+                break;
+            }
+            i++;
+            if (matchLiveFilled && matchDoneFilled && matchUpcomingFilled) {
+              matchListComplete = true;
+            }
+            
+          }
+        },
+        error: function (error) {},
+      });
+    </script>
+  </body>
+</html>
