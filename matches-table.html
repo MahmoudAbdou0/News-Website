@@ -18,6 +18,13 @@
   </head>
 
   <body>
+
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="spinner-border " role="status">
+      </div>
+    </div>
+
     <header class="py-3 gradient-bg sticky-top">
       <nav
         class="d-flex justify-content-between align-items-center navbar navbar-expand-lg"
@@ -282,5 +289,11 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/all.min.js"></script>
     <script src="js/apiMatchesTable.js"></script>
+    <script>
+      // Preloader
+      $(window).on('load', function () {
+        $('.preloader').fadeOut('slow');
+      });
+    </script>
   </body>
 </html>

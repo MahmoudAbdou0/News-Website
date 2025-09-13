@@ -49,8 +49,10 @@ getAllTeams();
     .then((data) => {
       // console.log(data.result);
       renderMatches(data.result);
+      $(".preloader").fadeOut("slow");
     })
     .catch((err) => {
+      $(".preloader").fadeOut("slow");
       return console.error("Error fetching fixtures:", err);
     });
 }
