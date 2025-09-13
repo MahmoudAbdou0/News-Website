@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <title>موقع كوريريدكس للأخبار</title>
-    <link rel="icon" type="image/png" href="images/logo2.png">
+    <title>موقع كوريريدكس للأخبار</title>
+    <link rel="icon" type="image/png" href="images/logo2.png" />
     <!-- Bootstrap & Font Awesome Links -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/all.min.css" />
@@ -18,31 +18,48 @@
     <style></style>
   </head>
   <body class="bg-light">
-    <header
-      class="d-flex justify-content-between align-items-center py-3 gradient-bg sticky-top"
-    >
-       <div class="d-flex align-items-center">
-        <a href="index.html" class="d-flex align-items-center text-decoration-none">
-          <img src="images/logo2.png" alt="Logo" width="40" />
-          <h1 class="websitetitle ms-2 mb-0">موقع كوريريدكس للأخبار</h1>
-        </a>
-      </div>
+    <header class="py-3 gradient-bg sticky-top">
+      <nav
+        class="d-flex justify-content-between align-items-center navbar navbar-expand-lg"
+      >
+        <div class="d-flex align-items-center">
+          <a
+            href="index.html"
+            class="d-flex align-items-center text-decoration-none"
+          >
+            <img src="images/logo2.png" alt="Logo" width="40" />
+            <h1 class="websitetitle me-2 mb-0">موقع كوريريدكس للأخبار</h1>
+          </a>
+        </div>
 
-      <nav >
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">الرئيسية</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="matches.html">المباريات</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="matches-table.html">جدول الدورى</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="statistics.html">الإحصائيات</a>
-          </li>
-        </ul>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarNav">
+          <ul class="nav me-auto d-flex flex-lg-row flex-column gap-2">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="matches.html">المباريات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="matches-table.html">جدول الدورى</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="statistics.html">الإحصائيات</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
 

@@ -1,160 +1,200 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap");
 * {
-        font-family: "Cairo", sans-serif;
+  font-family: "Cairo", sans-serif;
+  user-select: none;
 }
 
-  .gradient-bg {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      }
-.h3{
-    color: white;
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.h3 {
+  color: white;
 }
 
-.nav-link{
-    color: white;
+.nav-link {
+  color: white;
 }
 
-header{
-    padding: 0 5% 0 ;
+header {
+  padding: 0 5% 0;
 }
 
-.politicalnewssectionttitle{
-    border-bottom: rgb(59 130 246) 4px solid;
-    padding-right: 0;
-   
+.politicalnewssectionttitle {
+  border-bottom: rgb(59 130 246) 4px solid;
+  padding-right: 0;
 }
-.politicalnewssectionttitle>h2{
-    font-weight: 700;
-    font-size: 22px;
-    color: rgb(31 41 55 );
-     padding-right: 0;
+.politicalnewssectionttitle > h2 {
+  font-weight: 700;
+  font-size: 22px;
+  color: rgb(31 41 55);
+  padding-right: 0;
 }
-.sportsnewssectionttitle
-{
-     border-bottom: rgb(239 68 68) 4px solid;
+.sportsnewssectionttitle {
+  border-bottom: rgb(239 68 68) 4px solid;
 }
 
-.sportsnewssectionttitle > h2
-{
-    font-weight: 700;
-    font-size: 22px;
-    color: rgb(31 41 55 );
-    padding-right: 0;
+.sportsnewssectionttitle > h2 {
+  font-weight: 700;
+  font-size: 22px;
+  color: rgb(31 41 55);
+  padding-right: 0;
 }
 
-.entertianmentnewssectionttitle{
-    border-bottom: rgb(236 72 153) 4px solid;
+.entertianmentnewssectionttitle {
+  border-bottom: rgb(236 72 153) 4px solid;
 }
 
-.entertianmentnewssectionttitle > h2
-{
-    font-weight: 700;
-    font-size: 22px;
-    color: rgb(31 41 55 );
-    padding-right: 0;
+.entertianmentnewssectionttitle > h2 {
+  font-weight: 700;
+  font-size: 22px;
+  color: rgb(31 41 55);
+  padding-right: 0;
 }
 
-.economicnewsectiontitle{
-    border-bottom: rgb(34 197 94) 4px solid;
+.economicnewsectiontitle {
+  border-bottom: rgb(34 197 94) 4px solid;
 }
 
-.economicnewsectiontitle > h2
-{
-    font-weight: 700;
-    font-size: 22px;
-    color: rgb(31 41 55 );
-    padding-right: 0;
+.economicnewsectiontitle > h2 {
+  font-weight: 700;
+  font-size: 22px;
+  color: rgb(31 41 55);
+  padding-right: 0;
 }
 
-.fullcarddata{
-     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
-     transition: all 0.3s ease;
+.fullcarddata {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
+  transition: all 0.3s ease;
 }
 
-.card-title{
-    font-size: 18px;
-    font-weight: 700;
-    color: rgb(31 41 55 );
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(31 41 55);
 }
 
-
-.fullcarddata:hover{
-    /*transform: scale(1.025);  Pop up effect */
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+.fullcarddata:hover {
+  /*transform: scale(1.025);  Pop up effect */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.nav-link{
-    border-radius: 40px;
-     transition: all 0.3s ease;
+.nav-link {
+  border-radius: 40px;
+  transition: all 0.3s ease;
+  width: fit-content;
 }
 
- .nav-link:hover {
-      background-color: #cdd2d8; 
-      color: #000 !important;    
-      border-radius: 40px;
+.nav-link:hover {
+  background-color: #cdd2d8;
+  color: #000 !important;
+  border-radius: 40px;
 }
 
-.weathertitle{
-
-    color: rgb(31 41 55 );
-
+.weathertitle {
+  color: rgb(31 41 55);
 }
 
-.websitetitle{
-     font-weight: 800;
-     font-size: 25px;
-     color: aliceblue;
+.websitetitle {
+  font-weight: 800;
+  font-size: 25px;
+  color: aliceblue;
 }
 
-.weatherCardData{
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
+.weatherCardData {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
 }
 
-span{
-    color: rgb(59 130 246 );
-    font-size: 12px;
+span {
+  color: rgb(59 130 246);
+  font-size: 12px;
 }
 
-.currencyexchangeCarddata{
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
+.currencyexchangeCarddata {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
 }
 
-#amount{
-    padding: 5px;
-    border: lightgray solid 2px;
-    font-size: 12px;
-    border-radius: 10px;
-    height: 40px;
+#amount {
+  padding: 5px;
+  border: lightgray solid 2px;
+  font-size: 12px;
+  border-radius: 10px;
+  height: 40px;
 }
 
-#fromCurrency , #toCurrency {
-    padding: 5px;
-    border: lightgray solid 2px;
-    font-size: 12px;
-    border-radius: 10px;
-    height: 40px;
-
+#fromCurrency,
+#toCurrency {
+  padding: 5px;
+  border: lightgray solid 2px;
+  font-size: 12px;
+  border-radius: 10px;
+  height: 40px;
 }
 
-#conversionResult{
-    direction: ltr ;
-    align-content: center;
+#conversionResult {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* not strictly needed, but fine */
 }
 
-
-.livematchescardcontent{
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
+.livematchescardcontent {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
 }
-
-
 
 .nav-link.active {
   background-color: #0d6efd;
   color: #fff !important;
   border-radius: 20px;
   padding: 6px 15px;
+}
+
+/******************/
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: none;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 2px;
+  background-color: white;
+  transition: 0.3ms;
+}
+
+.navbar-toggler-icon::before {
+  width: 24px;
+  top: 6px;
+}
+
+.navbar-toggler-icon::after {
+  width: 16px;
+  bottom: 6px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  transform: rotate(45deg) translate(5px, 5px);
+  width: 24px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+  width: 24px;
 }

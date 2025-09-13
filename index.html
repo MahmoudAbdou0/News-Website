@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>موقع كوريريدكس للأخبار</title>
-    <link rel="icon" type="image/png" href="images/logo2.png">
+    <link rel="icon" type="image/png" href="images/logo2.png" />
     <!-- Bootstrap & Font Awesome Links -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!--  <link rel="stylesheet" href="css/all.min.css" /> -->
@@ -14,350 +14,371 @@
   </head>
   <body>
     <div class="">
-      <header
-        class="d-flex justify-content-between align-items-center py-3 gradient-bg sticky-top"
-      >
-      <div class="d-flex align-items-center">
-        <a href="index.html" class="d-flex align-items-center text-decoration-none">
-          <img src="images/logo2.png" alt="Logo" width="40" />
-          <h1 class="websitetitle ms-2 mb-0">موقع كوريريدكس للأخبار</h1>
-        </a>
-      </div>
+      <header class="py-3 gradient-bg sticky-top">
+        <nav
+          class="d-flex justify-content-between align-items-center navbar navbar-expand-lg"
+        >
+          <div class="d-flex align-items-center">
+            <a
+              href="index.html"
+              class="d-flex align-items-center text-decoration-none"
+            >
+              <img src="images/logo2.png" alt="Logo" width="40" />
+              <h1 class="websitetitle me-2 mb-0 text-sm">
+                موقع كوريريدكس للأخبار
+              </h1>
+            </a>
+          </div>
 
-        <nav >
-          <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">الرئيسية</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="matches.html">المباريات</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="matches-table.html">جدول الدورى</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="statistics.html">الإحصائيات</a>
-            </li>
-          </ul>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarNav">
+            <ul class="nav me-auto d-flex flex-lg-row flex-column gap-2">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">الرئيسية</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="matches.html">المباريات</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="matches-table.html">جدول الدورى</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="statistics.html">الإحصائيات</a>
+              </li>
+            </ul>
+          </div>
         </nav>
       </header>
 
-      <main class="container">
-        <div class="row">
-          <div class="col-md-9">
-            <div
-              class="row mt-4 mb-3 align-items-center politicalnewssectionttitle"
-            >
-              <h2>🏛️ أخبار السياسة</h2>
+      <main>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-7">
+              <div
+                class="row mt-4 mb-3 align-items-center politicalnewssectionttitle"
+              >
+                <h2>🏛️ أخبار السياسة</h2>
+              </div>
+              <div class="row g-4" id="politicalnewsSection">
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 fullcarddata">
+                    <img
+                      src="Images/defaultcardphoto.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">المقالة الأولى</h5>
+                      <p class="card-text">وصف المقالة الثانية الإفتراضي</p>
+                      <span class="text-xs text-blue-500 mt-2 block"
+                        >منذ ساعتين</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 fullcarddata">
+                    <img
+                      src="Images/defaultcardphoto.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">المقالة الثانية</h5>
+                      <p class="card-text">وصف المقالة الثانية الإفتراضي</p>
+                      <span class="text-xs text-blue-500 mt-auto block"
+                        >منذ 4 ساعات</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 fullcarddata">
+                    <img
+                      src="Images/defaultcardphoto.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">المقالة الثالثة</h5>
+                      <p class="card-text">وصف المقالة الثالثة الإفتراضي</p>
+                      <span class="text-xs text-blue-500 mt-2 block"
+                        >منذ 6 ساعات</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="row mt-4 mb-3 align-items-center economicnewsectiontitle"
+              >
+                <h2>💰 أخبار الإقتصاد</h2>
+              </div>
+              <div class="row g-4" id="economicnewscardssection">
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 fullcarddata">
+                    <img
+                      src="Images/defaultcardphoto.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">المقالة الأولى</h5>
+                      <p class="card-text">وصف المقالة الأولى الافتراضي</p>
+                      <span class="text-xs text-blue-500 mt-2 block"
+                        >منذ ساعتين</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 fullcarddata">
+                    <img
+                      src="Images/defaultcardphoto.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">المقالة الثانية</h5>
+                      <p class="card-text">وصف المقالة الثانية الإفتراضي</p>
+                      <span class="text-xs text-blue-500 mt-2 block"
+                        >منذ 4 ساعات</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 fullcarddata">
+                    <img
+                      src="Images/defaultcardphoto.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">المقالة الثالثة</h5>
+                      <p class="card-text">وصف المقالة الثالثة الإفتراضي</p>
+                      <span class="text-xs text-blue-500 mt-2 block"
+                        >منذ 6 ساعات</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="row mt-4 mb-3 align-items-center entertianmentnewssectionttitle"
+              >
+                <h2>🎭 أخبار الترفية</h2>
+              </div>
+              <div class="row g-4" id="entertainmentnewscardssection">
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 fullcarddata">
+                    <img
+                      src="Images/defaultcardphoto.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">المقالة الأولى</h5>
+                      <p class="card-text">وصف المقالة الأولى الافتراضي</p>
+                      <span class="text-xs text-blue-500 mt-2 block"
+                        >منذ ساعتين</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 fullcarddata">
+                    <img
+                      src="Images/defaultcardphoto.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">المقالة الثانية</h5>
+                      <p class="card-text">وصف المقالة الثانية الإفتراضي</p>
+                      <span class="text-xs text-blue-500 mt-2 block"
+                        >منذ 4 ساعات</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 fullcarddata">
+                    <img
+                      src="Images/defaultcardphoto.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">المقالة الثالثة</h5>
+                      <p class="card-text">وصف المقالة الثالثة الإفتراضي</p>
+                      <span class="text-xs text-blue-500 mt-2 block"
+                        >منذ 6 ساعات</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="row mt-4 mb-3 align-items-center sportsnewssectionttitle"
+              >
+                <h2>⚽ أخبار الرياضة</h2>
+              </div>
+              <div class="row g-4" id="sportsnewscardsection">
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 fullcarddata">
+                    <img
+                      src="Images/defaultcardphoto.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">المقالة الأولى</h5>
+                      <p class="card-text">وصف المقالة الأولى الافتراضي</p>
+                      <span class="text-xs text-blue-500 mt-2 block"
+                        >منذ 6 ساعات</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 fullcarddata">
+                    <img
+                      src="Images/defaultcardphoto.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">المقالة الثانية</h5>
+                      <p class="card-text">وصف المقالة الثانية الإفتراضي</p>
+                      <span class="text-xs text-blue-500 mt-2 block"
+                        >منذ 4 ساعات</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 fullcarddata">
+                    <img
+                      src="Images/defaultcardphoto.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">المقالة الثالثة</h5>
+                      <p class="card-text">وصف المقالة الثالثة الإفتراضي</p>
+                      <span class="text-xs text-blue-500 mt-2 block"
+                        >منذ ساعتين
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="row g-4" id="politicalnewsSection">
-              <div class="col-md-4">
-                <div class="card h-100 fullcarddata">
-                  <img
-                    src="Images/defaultcardphoto.jpg"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">المقالة الأولى</h5>
-                    <p class="card-text">وصف المقالة الأولى الافتراضي</p>
-                    <span class="text-xs text-blue-500 mt-2 block"
-                      >منذ ساعتين</span
-                    >
+            <aside class="col-lg-4 col-md-5">
+              <section class="row p-3 my-5 mx-3 weatherCardData">
+                <h3 class="text-center mb-4 weathertitle">🌤️ حالة الطقس</h3>
+                <div class="text-center">
+                  <div class="weatherIcon mb-3 fs-1" id="weatherIcon">☀️</div>
+                  <div class="text-danger" id="temperature">28°</div>
+                  <div class="" id="locationDisplay">القاهرة</div>
+                </div>
+              </section>
+
+              <!-- Currency Exchange -->
+              <section class="row p-3 my-5 mx-3 currencyexchangeCarddata">
+                <h3 class="h4 text-center mb-4">💱 أسعار الصرف</h3>
+                <div class="row text-start">
+                  <div class="col text-end">
+                    <span>دولار الأمريكي </span>
+                  </div>
+                  <div class="col text-center">
+                    <span><span class="text-success">48.85</span> ج.م</span>
                   </div>
                 </div>
-              </div>
 
-              <div class="col-md-4">
-                <div class="card h-100 fullcarddata">
-                  <img
-                    src="Images/defaultcardphoto.jpg"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">المقالة الثانية</h5>
-                    <p class="card-text">وصف المقالة الثانية الإفتراضي</p>
-                    <span class="text-xs text-blue-500 mt-2 block"
-                      >منذ 4 ساعات</span
-                    >
+                <!-- Currency Calculator -->
+                <div class="p-2 my-3">
+                  <h4 class="h5">حاسبة العملات</h4>
+                  <div class="row mb-2 my-3">
+                    <input type="number" id="amount" placeholder="00.00" />
                   </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card h-100 fullcarddata">
-                  <img
-                    src="Images/defaultcardphoto.jpg"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">المقالة الثالثة</h5>
-                    <p class="card-text">وصف المقالة الثالثة الإفتراضي</p>
-                    <span class="text-xs text-blue-500 mt-2 block"
-                      >منذ 6 ساعات</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="row mt-4 mb-3 align-items-center economicnewsectiontitle"
-            >
-              <h2>💰 أخبار الإقتصاد</h2>
-            </div>
-            <div class="row g-4" id="economicnewscardssection">
-              <div class="col-md-4">
-                <div class="card h-100 fullcarddata">
-                  <img
-                    src="Images/defaultcardphoto.jpg"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">المقالة الأولى</h5>
-                    <p class="card-text">وصف المقالة الأولى الافتراضي</p>
-                    <span class="text-xs text-blue-500 mt-2 block"
-                      >منذ ساعتين</span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card h-100 fullcarddata">
-                  <img
-                    src="Images/defaultcardphoto.jpg"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">المقالة الثانية</h5>
-                    <p class="card-text">وصف المقالة الثانية الإفتراضي</p>
-                    <span class="text-xs text-blue-500 mt-2 block"
-                      >منذ 4 ساعات</span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card h-100 fullcarddata">
-                  <img
-                    src="Images/defaultcardphoto.jpg"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">المقالة الثالثة</h5>
-                    <p class="card-text">وصف المقالة الثالثة الإفتراضي</p>
-                    <span class="text-xs text-blue-500 mt-2 block"
-                      >منذ 6 ساعات</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="row mt-4 mb-3 align-items-center entertianmentnewssectionttitle"
-            >
-              <h2>🎭 أخبار الترفية</h2>
-            </div>
-            <div class="row g-4" id="entertainmentnewscardssection">
-              <div class="col-md-4">
-                <div class="card h-100 fullcarddata">
-                  <img
-                    src="Images/defaultcardphoto.jpg"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">المقالة الأولى</h5>
-                    <p class="card-text">وصف المقالة الأولى الافتراضي</p>
-                    <span class="text-xs text-blue-500 mt-2 block"
-                      >منذ ساعتين</span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card h-100 fullcarddata">
-                  <img
-                    src="Images/defaultcardphoto.jpg"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">المقالة الثانية</h5>
-                    <p class="card-text">وصف المقالة الثانية الإفتراضي</p>
-                    <span class="text-xs text-blue-500 mt-2 block"
-                      >منذ 4 ساعات</span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card h-100 fullcarddata">
-                  <img
-                    src="Images/defaultcardphoto.jpg"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">المقالة الثالثة</h5>
-                    <p class="card-text">وصف المقالة الثالثة الإفتراضي</p>
-                    <span class="text-xs text-blue-500 mt-2 block"
-                      >منذ 6 ساعات</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="row mt-4 mb-3 align-items-center sportsnewssectionttitle"
-            >
-              <h2>⚽ أخبار الرياضة</h2>
-            </div>
-            <div class="row g-4" id="sportsnewscardsection">
-              <div class="col-md-4">
-                <div class="card h-100 fullcarddata">
-                  <img
-                    src="Images/defaultcardphoto.jpg"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">المقالة الأولى</h5>
-                    <p class="card-text">وصف المقالة الأولى الافتراضي</p>
-                    <span class="text-xs text-blue-500 mt-2 block"
-                      >منذ 6 ساعات</span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card h-100 fullcarddata">
-                  <img
-                    src="Images/defaultcardphoto.jpg"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">المقالة الثانية</h5>
-                    <p class="card-text">وصف المقالة الثانية الإفتراضي</p>
-                    <span class="text-xs text-blue-500 mt-2 block"
-                      >منذ 4 ساعات</span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card h-100 fullcarddata">
-                  <img
-                    src="Images/defaultcardphoto.jpg"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">المقالة الثالثة</h5>
-                    <p class="card-text">وصف المقالة الثالثة الإفتراضي</p>
-                    <span class="text-xs text-blue-500 mt-2 block"
-                      >منذ ساعتين
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <aside class="col-md-3">
-            <section class="row p-3 my-5 mx-3 weatherCardData">
-              <h3 class="text-center mb-4 weathertitle">🌤️ حالة الطقس</h3>
-              <div class="text-center">
-                <div class="weatherIcon mb-3 fs-1" id="weatherIcon">☀️</div>
-                <div class="text-danger" id="temperature">28°</div>
-                <div class="" id="locationDisplay">القاهرة</div>
-              </div>
-            </section>
-
-            <!-- Currency Exchange -->
-            <section class="row p-3 my-5 mx-3 currencyexchangeCarddata">
-              <h3 class="h4 text-center mb-4">💱 أسعار الصرف</h3>
-              <div class="row text-start">
-                <div class="col text-end">
-                  <span>دولار الأمريكي </span>
-                </div>
-                <div class="col text-center">
-                  <span><span class="text-success">48.85</span> ج.م</span>
-                </div>
-              </div>
-
-              <!-- Currency Calculator -->
-              <div class="p-3 my-3">
-                <h4 class="h5">حاسبة العملات</h4>
-                <div class="row mb-2 my-3">
-                  <input type="number" id="amount" placeholder="00.00" />
-                </div>
-                <div class="row g-1 my-3">
-                  <div class="col-6">
-                    <select title="fromCurrency" id="fromCurrency">
-                      <option value="EGP">جنيه مصري</option>
-                      <option value="GBP">جنيه استرليني</option>
-                      <option value="USD">دولار أمريكي</option>
-                      <option value="CAD">دولار كندي</option>
-                      <option value="SAR">ريال سعودي</option>
-                      <option value="KWD">دينار كويتي</option>
-                      <option value="ُEUR">يورو</option>
-                      <option value="JPY">ين</option>
-                    </select>
-                  </div>
-                  <div class="col-6">
-                    <select title="toCurrency" id="toCurrency">
-                      <option value="USD">دولار أمريكي</option>
-                      <option value="CAD">دولار كندي</option>
-                      <option value="EGP">جنيه مصري</option>
-                      <option value="GBP">جنيه استرليني</option>
-                      <option value="SAR">ريال سعودي</option>
-                      <option value="KWD">دينار كويتي</option>
-                      <option value="ُEUR">يورو</option>
-                      <option value="JPY">ين</option>
-                    </select>
-                  </div>
-
                   <div class="row my-3">
-                    <button
-                      onclick="calcCurrency()"
-                      class="rounded btn btn-primary"
-                    >
-                      تحويل
-                    </button>
+                    <div class="col-6 p-1">
+                      <select
+                        class="w-100"
+                        title="fromCurrency"
+                        id="fromCurrency"
+                      >
+                        <option value="EGP">جنيه مصري</option>
+                        <option value="GBP">جنيه استرليني</option>
+                        <option value="USD">دولار أمريكي</option>
+                        <option value="CAD">دولار كندي</option>
+                        <option value="SAR">ريال سعودي</option>
+                        <option value="KWD">دينار كويتي</option>
+                        <option value="ُEUR">يورو</option>
+                        <option value="JPY">ين</option>
+                      </select>
+                    </div>
+                    <div class="col-6 p-1">
+                      <select class="w-100" title="toCurrency" id="toCurrency">
+                        <option value="USD">دولار أمريكي</option>
+                        <option value="CAD">دولار كندي</option>
+                        <option value="EGP">جنيه مصري</option>
+                        <option value="GBP">جنيه استرليني</option>
+                        <option value="SAR">ريال سعودي</option>
+                        <option value="KWD">دينار كويتي</option>
+                        <option value="ُEUR">يورو</option>
+                        <option value="JPY">ين</option>
+                      </select>
+                    </div>
+
+                    <div class="row my-3 mx-auto">
+                      <button
+                        onclick="calcCurrency()"
+                        class="rounded btn btn-primary"
+                      >
+                        تحويل
+                      </button>
+                    </div>
+
+                    <div class="row" id="conversionResult"></div>
                   </div>
-
-                  <div class="row" id="conversionResult"></div>
                 </div>
-              </div>
-            </section>
+              </section>
 
-
-
-        <!-- Live Matches -->
-        <section class="row p-2 m-2 livematchescardcontent" >
-          <h3 class="h4 text-center mb-2 "> ⚽  المباريات المباشرة </h3>
-          <div class="row ps-1" id="LiveMatches"></div>
-          <div class="row ps-1" id="FinishedMatches"></div>
-          <div class="row ps-1" id="UpcomingMatches"></div>
-          
-        </section>
+              <!-- Live Matches -->
+              <section class="row p-2 m-2 livematchescardcontent">
+                <h3 class="h4 text-center mb-2">⚽ المباريات المباشرة</h3>
+                <div class="row ps-1" id="LiveMatches"></div>
+                <div class="row ps-1" id="FinishedMatches"></div>
+                <div class="row ps-1" id="UpcomingMatches"></div>
+              </section>
             </aside>
-            
-         </div>
+          </div>
+        </div>
       </main>
     </div>
 

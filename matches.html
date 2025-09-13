@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>موقع كوريريدكس للأخبار</title>
-    <link rel="icon" type="image/png" href="images/logo2.png">
+    <link rel="icon" type="image/png" href="images/logo2.png" />
     <!-- Bootstrap & Font Awesome Links -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/all.min.css" />
@@ -21,33 +21,51 @@
   </head>
   <body>
     <!--  Nav  -->
-    <header
-      class="d-flex justify-content-between align-items-center py-3 gradient-bg sticky-top"
-    >
-      <div class="d-flex align-items-center">
-        <a href="index.html" class="d-flex align-items-center text-decoration-none">
-          <img src="images/logo2.png" alt="Logo" width="40" />
-          <h1 class="websitetitle ms-2 mb-0">موقع كوريريدكس للأخبار</h1>
-        </a>
-      </div>
+    <header class="py-3 gradient-bg sticky-top">
+      <nav
+        class="d-flex justify-content-between align-items-center navbar navbar-expand-lg"
+      >
+        <div class="d-flex align-items-center">
+          <a
+            href="index.html"
+            class="d-flex align-items-center text-decoration-none"
+          >
+            <img src="images/logo2.png" alt="Logo" width="40" />
+            <h1 class="websitetitle me-2 mb-0">موقع كوريريدكس للأخبار</h1>
+          </a>
+        </div>
 
-      <nav >
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">الرئيسية</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="matches.html">المباريات</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="matches-table.html">جدول الدورى</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="statistics.html">الإحصائيات</a>
-          </li>
-        </ul>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarNav">
+          <ul class="nav me-auto d-flex flex-lg-row flex-column gap-2">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="matches.html">المباريات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="matches-table.html">جدول الدورى</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="statistics.html">الإحصائيات</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
+
     <!-- Matches Page -->
     <div id="matches-page" class="matches-page page hidden">
       <div class="container px-4 py-8">
@@ -69,7 +87,11 @@
           <div class="collapse" id="collapseExample">
             <form class="row">
               <div class="col-md-6 mb-2">
-                <select title="seasonFilter" id="seasonFilter" class="p-3 border rounded w-100">
+                <select
+                  title="seasonFilter"
+                  id="seasonFilter"
+                  class="p-3 border rounded w-100"
+                >
                   <option value="2025">موسم 2025/2026</option>
                   <option value="2024">موسم 2024/2025</option>
                   <option value="2023">موسم 2023/2024</option>
@@ -78,7 +100,11 @@
                 </select>
               </div>
               <div class="col-md-6 mb-2">
-                <select title="teamFilter" id="teamFilter" class="p-3 border rounded w-100">
+                <select
+                  title="teamFilter"
+                  id="teamFilter"
+                  class="p-3 border rounded w-100"
+                >
                   <option value="">جميع الفرق</option>
                 </select>
               </div>
