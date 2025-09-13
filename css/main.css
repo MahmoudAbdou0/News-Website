@@ -101,6 +101,12 @@ header {
   color: aliceblue;
 }
 
+@media (max-width: 576px) {
+  .websitetitle {
+    font-size: 1.2rem;
+  }
+}
+
 .weatherCardData {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
@@ -173,7 +179,7 @@ span {
 .navbar-toggler-icon::after {
   content: "";
   position: absolute;
-  right: 0;
+  left: 0;
   height: 2px;
   background-color: white;
   transition: 0.3ms;
@@ -197,4 +203,63 @@ span {
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
   transform: rotate(-45deg) translate(5px, -5px);
   width: 24px;
+}
+
+/******************/
+footer {
+  background: linear-gradient(135deg, #1b2735 0%, #4b3c8a 100%);background: linear-gradient(135deg, #1b2735 0%, #4b3c8a 100%);
+}
+
+.footer-brand{
+  text-align: center;
+}
+
+.footer-brand p{
+  line-height: 1.6;
+  max-width: 90%;
+}
+@media (min-width:576px) {
+  .footer-brand{
+    text-align: start;
+  }
+  
+}
+@media (max-width:768px) {
+  .footer-brand p {
+      max-width: 100%;
+    }
+  
+}
+.footer-links a{
+  color: white;
+  text-decoration: none;
+  opacity: 0.75;
+}
+
+.footer-links a:hover {
+  opacity: 1 ;
+  color: #0d6efd ;
+  transition: all 0.3s ease;
+}
+
+.copyright {
+  opacity: 0.7;
+  margin: 0.5rem 0;
+}
+
+.footer-bottom {
+  box-shadow : 1px 1px 5px 1px #0000003d;;
+  font-size: 0.9rem;
+  border-radius: 20px 20px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+.footer-bottom a {
+  font-weight: 500;
+  transition: color 0.3s ease;
+  color: #0d6efd;
+}
+.footer-bottom a:hover{
+  color: #cdd2d8;
 }
