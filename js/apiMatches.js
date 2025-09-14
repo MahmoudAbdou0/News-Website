@@ -40,6 +40,7 @@ async function getAllTeams() {
 getAllTeams();
 
 async function getMatches(Url) {
+  $(".preloader").fadeIn("fast");
   fetch(Url, {
     method: "GET",
   })
@@ -71,7 +72,7 @@ function renderAllTeams(teams) {
 }
 
 function renderMatches(matches) {
-  $(".matches-page .matches-list").empty();
+  $(".matches-page .matches-list").children(":not(:first)").remove();
 
   for (let i = 0; i < matches.length; i++) {
     const status = matches[i].event_status; // "Finished" | "Live" | "Not Started" | ...

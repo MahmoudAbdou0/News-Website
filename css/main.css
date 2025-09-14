@@ -224,38 +224,37 @@ span {
 
 /******************/
 footer {
-  background: linear-gradient(135deg, #1b2735 0%, #4b3c8a 100%);background: linear-gradient(135deg, #1b2735 0%, #4b3c8a 100%);
+  background: linear-gradient(135deg, #1b2735 0%, #4b3c8a 100%);
+  background: linear-gradient(135deg, #1b2735 0%, #4b3c8a 100%);
 }
 
-.footer-brand{
+.footer-brand {
   text-align: center;
 }
 
-.footer-brand p{
+.footer-brand p {
   line-height: 1.6;
   max-width: 90%;
 }
-@media (min-width:576px) {
-  .footer-brand{
+@media (min-width: 576px) {
+  .footer-brand {
     text-align: start;
   }
-  
 }
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .footer-brand p {
-      max-width: 100%;
-    }
-  
+    max-width: 100%;
+  }
 }
-.footer-links a{
+.footer-links a {
   color: white;
   text-decoration: none;
   opacity: 0.75;
 }
 
 .footer-links a:hover {
-  opacity: 1 ;
-  color: #0d6efd ;
+  opacity: 1;
+  color: #0d6efd;
   transition: all 0.3s ease;
 }
 
@@ -265,11 +264,10 @@ footer {
 }
 
 .footer-bottom {
-  box-shadow : 1px 1px 5px 1px #0000003d;;
+  box-shadow: 1px 1px 5px 1px #0000003d;
   font-size: 0.9rem;
   border-radius: 20px 20px 0 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-
 }
 
 .footer-bottom a {
@@ -277,6 +275,6 @@ footer {
   transition: color 0.3s ease;
   color: #0d6efd;
 }
-.footer-bottom a:hover{
+.footer-bottom a:hover {
   color: #cdd2d8;
 }
