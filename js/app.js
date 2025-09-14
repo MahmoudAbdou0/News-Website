@@ -1,16 +1,15 @@
-  const currentPage = window.location.pathname.split("/").pop();
-  document.querySelectorAll(".nav-link").forEach(link => {
-    if (link.getAttribute("href") === currentPage) {
-      link.classList.add("active");
-      link.setAttribute("aria-current", "page");
-    }
-  });
-
+const currentPage = window.location.pathname.split("/").pop();
+document.querySelectorAll(".nav-link").forEach((link) => {
+  if (link.getAttribute("href") === currentPage) {
+    link.classList.add("active");
+    link.setAttribute("aria-current", "page");
+  }
+});
 
 function timeAgoArabic(dateString) {
   const now = new Date();
   const past = new Date(dateString);
-  const diffMs = now - past; 
+  const diffMs = now - past;
 
   const diffSec = Math.floor(diffMs / 1000);
   const diffMin = Math.floor(diffSec / 60);
@@ -35,59 +34,70 @@ function timeAgoArabic(dateString) {
   return `منذ ${diffDays} أيام`;
 }
 
-
-
-var NEW_API_KEY = "727ca44e62b94b15469970de60c7e12a";
+// var NEW_API_KEY = "727ca44e62b94b15469970de60c7e12a";
 /* var NEW_API_KEY = "ed0dc38c340ba1b315e4b89cc0d37aaf"; */
 var NEWS_BASIC_URL = "https://gnews.io/api/v4/search?";
 
+function getnewsdata(fcategory, elementID) {
+  var query = "google";
+  var lang = "ar";
+  var max = 3;
 
-  function getnewsdata(fcategory , elementID){
-    var query = "google";
-    var lang = "ar" ; 
-    var  max = 3
+  var NewsEndPoint = `${NEWS_BASIC_URL}q=${query}&lang=${lang}&category=${fcategory}&max=${max}&apikey=${NEW_API_KEY}`;
 
-    var NewsEndPoint = `${NEWS_BASIC_URL}q=${query}&lang=${lang}&category=${fcategory}&max=${max}&apikey=${NEW_API_KEY}`;
-
-
-      console.log(NewsEndPoint);
- $.ajax({
-    type : "get",
-    dataType : "json",
-    url :  NewsEndPoint , 
-    success : (news)=>{
-
-          $("#"+elementID).empty();
-   for (let index = 0; index < 3; index++) {
-  
-                                               $("#"+elementID).append (`
+  console.log(NewsEndPoint);
+  $.ajax({
+    type: "get",
+    dataType: "json",
+    url: NewsEndPoint,
+    success: (news) => {
+      $("#" + elementID).empty();
+      for (let index = 0; index < 3; index++) {
+        $("#" + elementID).append(`
                                                         
                                                                 <div class="col-md-4">
                                                                 <div class="card h-100 fullcarddata">
-                                                                    <img src="${news.articles[index].image}" class="card-img-top" alt="...">
+                                                                    <img src="${
+                                                                      news
+                                                                        .articles[
+                                                                        index
+                                                                      ].image
+                                                                    }" class="card-img-top" alt="...">
                                                                     <div class="card-body">
-                                                                    <h5 class="card-title">${news.articles[index].title}</h5>
-                                                                    <p class="card-text">${news.articles[index].description}</p>
-                                                                    <span class="text-xs text-blue-500 mt-2 block">${timeAgoArabic(news.articles[index].publishedAt)}</span>  
+                                                                    <h5 class="card-title">${
+                                                                      news
+                                                                        .articles[
+                                                                        index
+                                                                      ].title
+                                                                    }</h5>
+                                                                    <p class="card-text">${
+                                                                      news
+                                                                        .articles[
+                                                                        index
+                                                                      ]
+                                                                        .description
+                                                                    }</p>
+                                                                    <span class="text-xs text-blue-500 mt-2 block">${timeAgoArabic(
+                                                                      news
+                                                                        .articles[
+                                                                        index
+                                                                      ]
+                                                                        .publishedAt
+                                                                    )}</span>  
                                                                     </div>
                                                                 </div>
                                                                 </div>`);
-    
-                                            }
-    } ,
-    error : (errors)=>{
-       console.log("Error while getting "+fcategory+" News " + JSON.stringify(errors));
-    }
-  }); 
+      }
+    },
+    error: (errors) => {
+      console.log(
+        "Error while getting " + fcategory + " News " + JSON.stringify(errors)
+      );
+    },
+  });
+}
 
-  }
-
-      
-    getnewsdata("general"  , 'politicalnewsSection');
-    getnewsdata("business" , 'economicnewscardssection');
-    getnewsdata("entertainment"  , 'entertainmentnewscardssection');
-    getnewsdata("sports"  , 'sportsnewscardsection'); 
-
-
-
-
+getnewsdata("general", "politicalnewsSection");
+getnewsdata("business", "economicnewscardssection");
+getnewsdata("entertainment", "entertainmentnewscardssection");
+getnewsdata("sports", "sportsnewscardsection");

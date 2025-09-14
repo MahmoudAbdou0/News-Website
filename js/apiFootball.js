@@ -49,7 +49,7 @@ async function getMatches(Url) {
       return res.json();
     })
     .then((data) => {
-      console.log(data.response);
+      console.log(data);
       renderMatches(data.response);
     })
     .catch((err) => {

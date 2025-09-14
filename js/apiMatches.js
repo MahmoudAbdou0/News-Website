@@ -39,7 +39,7 @@ async function getAllTeams() {
 }
 getAllTeams();
 
- async function getMatches(Url) {
+async function getMatches(Url) {
   fetch(Url, {
     method: "GET",
   })
@@ -47,7 +47,7 @@ getAllTeams();
       return res.json();
     })
     .then((data) => {
-      // console.log(data.result);
+      console.log(data.result);
       renderMatches(data.result);
     })
     .catch((err) => {
@@ -74,8 +74,7 @@ function renderMatches(matches) {
   for (let i = 0; i < matches.length; i++) {
     const status = matches[i].event_status; // "Finished" | "Live" | "Not Started" | ...
     const isFinished = status === "Finished";
-    const isLive = status === "Live";
-    const isNotStarted = status === "Not Started" || status === "Scheduled";
+    const isLive = status !== "Finished" && status !== "";
 
     const statusClass = isFinished
       ? "text-danger"
