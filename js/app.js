@@ -34,7 +34,7 @@ function timeAgoArabic(dateString) {
   return `منذ ${diffDays} أيام`;
 }
 
-// var NEW_API_KEY = "727ca44e62b94b15469970de60c7e12a";
+var NEW_API_KEY = "727ca44e62b94b15469970de60c7e12a";
 /* var NEW_API_KEY = "ed0dc38c340ba1b315e4b89cc0d37aaf"; */
 var NEWS_BASIC_URL = "https://gnews.io/api/v4/search?";
 

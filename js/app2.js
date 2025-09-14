@@ -26,7 +26,7 @@ function timeAgoArabic(dateString) {
   return `منذ ${diffDays} أيام`;
 }
 
-// var API_KEY = "9cb0ecbe0a81f60f2350da900477ff38";
+var API_KEY = "9cb0ecbe0a81f60f2350da900477ff38";
 // var API_KEY = "727ca44e62b94b15469970de60c7e12a";
 
 /**
