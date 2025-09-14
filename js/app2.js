@@ -82,7 +82,7 @@ function getnewsdata(fcategory, elementID) {
       </div>`); */
 
         $("#" + elementID).append(`
-    <div class="col-md-4">
+    <div class="col-md-6 col-lg-4">
       <div class="card h-100 fullcarddata">
         <img src="${news.data[index].image}" class="card-img-top" alt="...">
         <div class="card-body">

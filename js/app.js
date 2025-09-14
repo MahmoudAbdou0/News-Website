@@ -55,7 +55,7 @@ function getnewsdata(fcategory, elementID) {
       for (let index = 0; index < 3; index++) {
         $("#" + elementID).append(`
                                                         
-                                                                <div class="col-md-4">
+                                                                <div class="col-md-6 col-lg-4">
                                                                 <div class="card h-100 fullcarddata">
                                                                     <img src="${
                                                                       news
