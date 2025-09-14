@@ -1,5 +1,3 @@
-import { getArabicName } from "./helper";
-
 const API_KEY =
   "63cc1f86357b7aa3a1d29001d144b75344ef7c3fa1f70c926f1da259ab9f2e88";
 const API_URL = `https://apiv2.allsportsapi.com/football/?met=Standings&leagueId=152&APIkey=689ad9175e01c1534a675d7a00f8bbe95819a71058e3fd184b41946b0fc0bc04`;
@@ -23,9 +21,7 @@ $(document).ready(function () {
                 <img src="${team.team_logo}" alt="${
           team.standing_team
         }" width="25" class="me-2"/>
-                <span class="team-name">${getArabicName(
-                  team.standing_team
-                )}</span>
+                <span class="team-name">${team.standing_team}</span>
               </div>
             </td>
             <td>${team.standing_P}</td>
